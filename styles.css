@@ -1,0 +1,56 @@
+
+/* Fonts */
+h1 {
+    font-family: Raleway;
+    font-size: 10.5vmin;
+    margin-bottom: 0;
+    margin-top: 40px;
+    line-height: .9;
+}
+
+ h3 {
+    font-family: Raleway;
+    font-size: 5vmin;
+    margin-top: 20px;
+ }
+
+h2.Gerry {
+    font-family: 'Gerry', serif;
+    font-size: 500%;
+    color: #D39F29;
+    margin-top: 15px;
+}
+
+
+/* Containers */
+* {margin:0; padding:0;}
+
+header {
+    background-image: linear-gradient(#28386C, white);    
+    width: 100vw;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+/* add text wrapping */
+#title {
+    text-align: center;
+    width: 50%;
+    background: rgba(40, 56, 108, .8);
+    height: 59%;
+    color: white;
+    margin: auto;
+    float: right;
+    position: absolute;
+    right: 0%;
+    top:20%;
+    z-index: 1000;
+}
+
+/* #fffff2 off-white hex */
+.introduction {
+    height: 100vh;
+}
