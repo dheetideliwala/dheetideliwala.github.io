@@ -1,63 +1,86 @@
 
 /* Fonts */
-h1 {
+h1.headline {
     font-family: Raleway;
-    font-size: 75pt;
-    margin-bottom: 0;
-    margin-top: 20px;
-    line-height: 1.05;
+    font-size: 50pt;
+    color: #28386C;
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
- h3 {
+ h6.subtitle {
     font-family: Raleway;
-    font-size: 35pt;
-    margin-top: 1vh;
+    font-size: 25pt;
+    font-weight: 500;
+    color: #727289;
  }
 
-h2.Gerry {
+h3.Gerry {
     font-family: 'Gerry', serif;
-    font-size: 60pt;
+    font-size: 53pt;
     color: #D39F29;
-    margin-top: 15px;
+    margin-top: 9px;
+}
+
+.text-center {
+    text-align: center;
 }
 
 
 /* Containers */
 * {margin:0; padding:0;}
 
-header {
-    background-image: linear-gradient(#28386C, white);    
-    width: 100vw;
+.intro-image {
+    /* background-image: url(images/district\ header.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     height: 100vh;
-    min-height: 700px;
-    display: flex;
-    overflow: hidden;
+
     position: relative;
+    
+    display: flex;
 }
 
-/* add text wrapping */
-#title {
-    text-align: center;
-    word-break: normal;
-    color: white;
-    padding-left: 25px;
-    padding-right: 40px;
-    padding-bottom: 20px;
+.title-text {
+    padding-top: 170px;
+    padding-left: 60px;
 
-    width: fit-content;
-    height: fit-content;
-    min-height: 500px;
-
-    background: rgba(40, 56, 108, .8);
-
-    float: right;
-    position: absolute;
-    right: 0%;
-    top: 30vh;
-    z-index: 1000;
+    position:absolute;
 }
 
-/* #fffff2 off-white hex */
-.introduction {
-    height: 100vh;
+.background-text {
+    padding-top: 100px;
+    /* padding-bottom: 50px; */
+
+    margin-right: 250px;
+    margin-left: 250px;
+
+    font-size: 25px;
+    line-height: 50px;
+    font-family: Raleway;
+    }
+
+.background-text-half {
+    padding-top: 35px;
+
+    margin-left: 75px;
+
+    font-size: 25px;
+    line-height: 50px;
+    font-family: Raleway;
+
+}
+
+img.background-AZ {
+    text-align: left;
+
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+
+    padding-right: 100px;
+
+    margin-top: 50px;
 }

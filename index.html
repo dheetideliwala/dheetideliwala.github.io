@@ -8,8 +8,15 @@
 
     <link href="normalize.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <script src="movement.js"></script>
 
     <style>
         @font-face {
@@ -28,21 +35,54 @@
 
 
 <body>
-    <header>
-        <!-- <div> -->
-            <div id="title">
-                <h1>Independent <br>Redistricting<br>Commissions</h1>
-                <h3>and their fight against</h3>
-                <h2 class="Gerry">Gerrymandering</h2>
-                
+    <section id="title">
+        <div class="title">
+            <div class="intro-image">
+                <!-- change opacity of image as it scrolls to next section-->
+                <img src="images/district header.png" alt="117th United States House Districts" style="width:100vw; height:100vh; opacity:55%">
+                <div class="title-text">
+                    <h1 class="headline">Independent Redistricting Commissions</h1>
+                    <h6 class="subtitle">and the fight against</p>
+                    <!-- could add a transition here every two seconds that changes a letter in gerrymandering to another fancy letter -->
+                    <h3 class="Gerry">Gerrymandering</h3> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="background">
+        <div class="background-text">
+            <p>Every 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
+            <br>
+            <p>With each decade's population change, the number of representatives granted to each state is adjusted in order to preserve the proportional nature of the U.S. House of Representatives. This process of reassigning the number of representatives is called <span style="color:#8888ab;">reapportionment</span>.</p>
+        </div>
+        <div class="background-wrapper" style="width:100%;">
+            <div class="background-text-half" style="width: 47%; float:left;">
+                <p>Along with potentially adjusting the number of Congressional districts after reapportionment, each state must also redraw their districts so each district has roughly the same number of people.</p>
+                <br>
+                <p>This entire process as a whole is called <span style="color:#8888ab;">redistricting</span>, but <span style="color:#d3a029">how do states redraw their maps?</span></p>
             </div>
 
-            <img src="./images/district-header.png" alt="a cat" style="width: 1500px; height: 1250px;">
-        <!-- </div> -->
-    </header>
+            <!-- maybe you can make the images sticky on the side so that it scrolls with the two different texts -->
+            <div class="background-images" style="margin-left: 50%; width: 53%">
+                <img class="background-AZ" src="" id="AZ-image">
 
-    <div class="introduction"></div>
+                <!-- move js to .js file -->
+                <script type="text/javascript">
+                    let image = document.getElementById('AZ-image');
+                    let images = ['images/AZ_1.png', 'images/AZ_2.png', 'images/AZ_3.png', 'images/AZ_4.png', 'images/AZ_5.png', 'images/AZ_6.png', 'images/AZ_7.png', 'images/AZ_8.png', 'images/AZ_9.png', 'images/AZ_10.png']
+                    setInterval(function(){
+                        let random = Math.floor(Math.random() * 10);
+                        image.src = images[random];
+                    }, 800);
+                </script>
+            </div>
+        </div>
+    </section>
 
+    <section id="districting">
+        <div class="districting-text" style="height:100vh;"></div>
+    </section>
 
 
 </body>
