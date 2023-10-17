@@ -1,57 +1,18 @@
+.row {
+    margin-bottom: 50px;
+    position: absolute;
 
-/* Fonts */
-h1.headline {
-    font-family: Raleway;
-    font-size: 50pt;
-    color: #28386C;
-    margin-bottom: 5px;
-    font-weight: 700;
+    width: fit-content;
+    height: fit-content;
 }
 
- h6.subtitle {
-    font-family: Raleway;
-    font-size: 25pt;
-    font-weight: 500;
-    color: #727289;
- }
-
-h3.Gerry {
-    font-family: 'Gerry', serif;
-    font-size: 53pt;
-    color: #D39F29;
-    margin-top: 9px;
+/* Background */
+#background {
+    margin-bottom: 100px;
 }
 
-.text-center {
-    text-align: center;
-}
-
-
-/* Containers */
-* {margin:0; padding:0;}
-
-.intro-image {
-    /* background-image: url(images/district\ header.png); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    height: 100vh;
-
-    position: relative;
-    
-    display: flex;
-}
-
-.title-text {
-    padding-top: 170px;
-    padding-left: 60px;
-
-    position:absolute;
-}
-
-.background-text {
-    padding-top: 100px;
+.background-text, .gerrymandering {
+    padding-top: 30px;
     /* padding-bottom: 50px; */
 
     margin-right: 250px;
@@ -60,27 +21,57 @@ h3.Gerry {
     font-size: 25px;
     line-height: 50px;
     font-family: Raleway;
-    }
-
-.background-text-half {
-    padding-top: 35px;
-
-    margin-left: 75px;
-
-    font-size: 25px;
-    line-height: 50px;
-    font-family: Raleway;
-
+    font-weight:100;
 }
 
-img.background-AZ {
-    text-align: left;
+p.subtitle {
+    font-family: 'Gerry', serif;
+    color:#8888ab;
+    font-size: 27pt;
 
-    display: block;
-    margin: 0 auto;
-    transition: 0.3s;
+    padding-top: 10px;
+}
 
-    padding-right: 100px;
 
-    margin-top: 50px;
+/*  Districting */
+.districting {
+    display: flex;
+}
+
+.districting-text {
+    flex: 3;
+
+    font-size: 25px;
+    font-family:Raleway;
+    line-height: 50px;
+
+    border: 1px solid #8888ab; 
+    border-style: groove; 
+        
+    padding-left: 30px;
+    padding-top: 50px;
+    padding-right: 30px;
+
+    /* line-height: 1.4; */
+}
+
+.districting-images {
+    flex: 4;
+    
+    border: 1px solid #8888ab;
+    border-style:groove; 
+    
+    margin-left: -1px;
+    
+    background-image: linear-gradient(#28386c, #8888ab, white);
+}
+
+.image-row {
+    display: flex;
+    padding: 0px;
+}
+
+.img {
+    flex: 33.33%;
+    padding: 5px;
 }

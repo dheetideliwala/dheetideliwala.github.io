@@ -1,0 +1,73 @@
+.title {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-map {
+    flex: 7;
+    width: 70vw;
+}
+
+svg {
+    width:70vw;
+    height:100vh;
+}
+
+.state {
+    stroke: rgba(128, 128, 128);
+    stroke-width: 1;
+    fill: white;
+}
+
+.selectedstate {
+    stroke:black;
+    stroke-width:3;
+    fill:#5b852a
+}
+
+.highlighted  {
+    fill: #5b852a;
+    stroke: black;
+    stroke-width: 2;
+}
+
+
+/* Text Styling */
+.title-text {
+    text-align: right;
+    width: 30vw;
+
+    flex: 3;
+}
+
+h1.headline {
+    font-family: Raleway;
+    font-size: 50pt;
+    font-weight: 500;
+    color: #28386C;
+    line-height: 1.1;
+    
+    padding-top: 200px;
+    padding-right: 30px;
+
+    margin-bottom: 15px;
+}
+
+h3.Gerry {
+    font-family: 'Gerry', serif;
+    font-size: 29pt;
+    color: #D39F29;
+
+    padding-right: 30px;
+    
+}
+
+h6.subtitle {
+    font-family: Raleway;
+    font-size: 20pt;
+    font-weight: 500;
+    color: gray;
+
+    padding-right: 30px;
+ }
