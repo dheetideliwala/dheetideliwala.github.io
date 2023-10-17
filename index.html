@@ -6,17 +6,22 @@
 
     <meta charset="utf-8" />
 
-    <link href="normalize.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway:wght@700&display=swap" rel="stylesheet">    
 
-    <script src="movement.js"></script>
+
+    <!-- CSS FILES LINED -->
+    <!-- <link href="normalize.css" rel="stylesheet"> -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="title.css" rel="stylesheet">
+    <link href="metrics.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" /> 
 
     <style>
         @font-face {
@@ -29,68 +34,207 @@
         }
     </style>
 
-    <script src='https://d3js.org/d3.v5.min.js'></script>
-
 </head>
 
 
 <body>
     <section id="title">
         <div class="title">
-            <div class="intro-image">
-                <!-- change opacity of image as it scrolls to next section-->
-                <img src="images/district-header.png" alt="117th United States House Districts" style="width:100vw; height:100vh; opacity:55%">
-                <div class="title-text">
-                    <h1 class="headline">Independent Redistricting Commissions</h1>
-                    <h6 class="subtitle">and the fight against</p>
-                    <!-- could add a transition here every two seconds that changes a letter in gerrymandering to another fancy letter -->
-                    <h3 class="Gerry">Gerrymandering</h3> 
+            <div class="title-map">
+                <svg id='states-all-map'></svg>
+            </div>
+            <div class="title-text">
+                <h1 class="headline">Independent</br>Redistricting</br>Commissions</h1>
+                <h6 class="subtitle">and their fight against</p>
+                <!-- could add a transition here every two seconds that changes a letter in gerrymandering to another fancy letter -->
+                <h3 class="Gerry">Gerrymandering</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="background"> 
+        <div class="background-text">
+            <!-- add in font opacity change with scroll, or something to signify which text you're on -->
+            <p><span style="font-family:'Gerry'; font-size: 40pt;">E</span>very 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
+            <br>
+            <p>With each decade's population change, the number of representatives granted to each state is adjusted in order to preserve the proportional nature of the U.S. House of Representatives. This process of reassigning the number of representatives is called <span style="color:#8888ab; font-weight: 700;">reapportionment</span>.</p>
+            <br>
+            <p>Along with potentially adjusting the number of Congressional districts after reapportionment, each state must also redraw their districts so each district has roughly the same number of people.</p>
+            <br>
+            <!-- bring the question to the header of the next section, make it sticky so you scroll until it's at the top of the screen -->
+            <p>The process of reapportionment and redrawing districts is called <span style="color:#8888ab; font-weight: 700;">redistricting</span>. So <br><span style="color:#d3a029; font-weight: 700;">How do states decide how to redistrict their maps?</span></p>
+        </div>
+    </section>
+
+    <section id="districting"> 
+        <div class="districting">
+            <div class="districting-text">
+                <div>
+                    <p>The census provides states with voting precincts, which are the building blocks combined together to create districts.</p>
+                    <p>With thousands of precincts in each state, the number of maps that can be drawn are endless.</p>
+                    <br>
+                    <p>Fortunately, the U.S. Constitution and each state constitution include guidelines that ought to be followed, which reduces the number of valid maps that can be drawn.</p>
+                    <br>
+                    <p>Legally, districts must
+                        <ul style="color:#8888ab; font-weight:700;">
+                            <li>have equal population</li>
+                            <li>be contiguous</li>
+                            <li>be geographically compact</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <p>Because of the complex nature of this question, some mathematicians have created algorithms to objectively redraw the districts for states, which follow the aforementioned guidelines.</p>
+                    <br>
+                    <p>These computational maps, however, would not respect<span style="color: #8888ab; font-weight: 700;"> existing municipalities, cities, counties, or communities of interest</span>- another guideline found in state constitutions.</p>
+                    <br>
+                    <p>States could also redraw maps to give their party an advantage or to make each district maximally competitive, while still following constitutional guidelines.</p>
+                    <br>
+                    <p>But these maps could, and historically have, landed states in judicial battles about a person's right to vote and be represented fairly.</p>
+                    <br>
+                    <p>Constitutional rules give us a guiding framework to understand which maps are and aren't allowed. But for the thousands maps that do follow all the rules,</p>
+                    <p style="color:#d3a029; font-weight: 700;">How can we tell which of maps are "better" than others?</p>
+                </div>
+            </div>
+            <!-- maybe while cursor on the actual div, it could freeze on that image -->
+            <div class="districting-images">
+                <div>
+                    <!-- i need to add a white background in the shape of AZ to all of the images -->
+                    <img class="AZ-slides" src="" id="AZ-slides" style="background-size: cover; width: 100%;">
+
+                    <script type="text/javascript">
+                        let image = document.getElementById('AZ-slides');
+                        let images = ['images/districting/AZ_1.png', 'images/districting/AZ_2.png', 'images/districting/AZ_3.png', 'images/districting/AZ_4.png', 'images/districting/AZ_5.png', 'images/districting/AZ_6.png', 'images/districting/AZ_7.png', 'images/districting/AZ_8.png', 'images/districting/AZ_9.png', 'images/districting/AZ_10.png']
+                        setInterval(function(){
+                            let random = Math.floor(Math.random() * 10);
+                            image.src = images[random];
+                        }, 1000);
+                    </script>
+                    <br>
+                    <p class="subtitle" style="text-align: center;">Arizona</p>
+                </div>
+
+                <!-- either I can add subtitles, and when I get to them, I adjust the widths of all the images OR I just have a hover over, but have to motion the users to use it -->
+                <div class="image-row">
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_nonCompact_precinct.png" style="width:210px;">
+                    </div>
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_nonConting_precinct.png" style="width:210px;">
+                    </div>
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_nonPop_precinct.png" style="width:210px;">
+                    </div>
+                </div>
+
+                <!-- Change the coloring of the districts -->
+                <div class="image-row">
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_Shortest.png" style="width:325px;;">
+                    </div>
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_Olson.png" style="width:325px;">
+                    </div>
+                </div>
+
+                <!-- add the slider of Dem to Rep under so they understand what the colors mean -->
+                <div class="image-row">
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_Dem.png" style="width:210px;;">
+                    </div>
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_Rep.png" style="width:210px;">
+                    </div>
+                    <div class="img">
+                        <img class="AZ-options" src="images/AZ_nonCompetitive.png" style="width:210px;">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="background">
-        <div class="background-text">
-            <p>Every 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
-            <br>
-            <p>With each decade's population change, the number of representatives granted to each state is adjusted in order to preserve the proportional nature of the U.S. House of Representatives. This process of reassigning the number of representatives is called <span style="color:#8888ab;">reapportionment</span>.</p>
-        </div>
-        <div class="background-wrapper" style="width:100%;">
-            <div class="background-text-half" style="width: 47%; float:left;">
-                <p>Along with potentially adjusting the number of Congressional districts after reapportionment, each state must also redraw their districts so each district has roughly the same number of people.</p>
-                <br>
-                <p>This entire process as a whole is called <span style="color:#8888ab;">redistricting</span>, but <span style="color:#d3a029">how do states redraw their maps?</span></p>
-            </div>
+    <section id="metrics">
+        <div class="metrics-text">
+            <p>Using the census, VEST (Voting & Election Science Team), and geographical data tied to each potential map, different metrics about each map can be computed. These metrics can tell us geographical and partisan features about a map, like how many counties redrawn districts split or how many Democrats a map yields.</p>
+            </br>
+            <p>Compounding the metrics calculated from thousands of possible maps that follow constitutional guidelines, we can plot a histogram with all those values and note where one specific map lies in relation to the rest &#40;such as around the average, median, or an outlier&#41;.</p>
+            </br>
+            <p>Researchers are able to create thousands of possible maps through the process of  <span style="color:#8888ab; font-weight: 700;">Markov Chain Monte Carlo</span>. Once they create a large and representative sample of how one state might be redistricted, they can compare it to existing state maps using the metrics below.</p>
+            <!-- add in a link to their site
+            <p class="subtitle">Researchers at Harvard, under the ALARM Project, wrote an MCMC R program to create representative samples for each state.</p> -->
 
-            <!-- maybe you can make the images sticky on the side so that it scrolls with the two different texts -->
-            <div class="background-images" style="margin-left: 50%; width: 53%">
-                <img class="background-AZ" src="" id="AZ-image">
-
-                <!-- move js to .js file -->
-                <script type="text/javascript">
-                    let image = document.getElementById('AZ-image');
-                    let images = ['images/AZ_1.png', 'images/AZ_2.png', 'images/AZ_3.png', 'images/AZ_4.png', 'images/AZ_5.png', 'images/AZ_6.png', 'images/AZ_7.png', 'images/AZ_8.png', 'images/AZ_9.png', 'images/AZ_10.png']
-                    setInterval(function(){
-                        let random = Math.floor(Math.random() * 10);
-                        image.src = images[random];
-                    }, 800);
-                </script>
-            </div>
         </div>
     </section>
 
-    <section id="districting">
-        <div class="districting-text" style="height:100vh;"></div>
+    <div class="sticky-parent"> 
+        <div class="sticky"> 
+            <!-- i think i should make it just vertical with scroll-snap-type -->
+            <div class="scroll-section"> 
+                <div class="metric">
+                    <h1>Expected Number of Seats</h1>
+                </div>
+                <div class="metric">
+                    <h1>Election Results by districts</h1>
+                </div>
+                <div class="metric">
+                    <h1>Deviation from Partisan Symmetry</h1>
+                </div>
+                <div class="metric">
+                    <h1>Efficiency Gap</h1>
+                </div>
+                <div class="metric">
+                    <h1>Average Polsby Popper</h1>
+                </div>
+                <div class="metric">
+                    <h1>Counties Split</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section id="metrics">
+        <div class="metrics-text">
+            <p>With all these metrics, we can now compare redistricted and enacted maps. These comparisons can help us understand how truly randomized or influenced the redrawing of districts and maps might have been, but</br><span style="color:#d3a029; font-weight: 700;">Whose maps are we checking?</span></p>
+        </div>
+    </section>
+
+    <section id="gerrymandering">
+        <div class="gerrymandering">
+            <p>Written in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the population census.</p>
+            </br>
+            <p>Naturally, those in power have an incentive to stay in power. So, giving state legislators the responsibility to draw districts, and ultimately choose their voters, in a way that advantages them in elections opens up the possibility of unfair redistricting practices.</p>
+            </br>
+            <p>The practice of redistricting with the intent to disadvantage the opposing political party or advantage one's own political party is called <span style="color:#8888ab; font-weight: 700;">gerrymandering</span>.</p>
+            </br>
+            <!-- should add links here to SCOTUS cases -->
+            <p>Thankfully, gerrymandering has become easier to uncover through the same process of how we analyzed metrics and maps above. That type of analysis was actually used in Supreme Court cases against the North Carolina and Alabama legislatures this past year.</p>
+            </br>
+            <p>In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;"></span>Independent Redistricting Commissions</span>. These are made up of individuals who do not hold office, thus removing the incentive to redistrict to one's advantage.</p>
+            </br>
+            <p>But<br><span style="color:#d3a029; font-weight: 700;">How can we tell if Independent Redistricting Commissions are less likely to gerrymander?</span></p>
+        </div>
+    </section>
+
+    <section id="analysis">
+
+    </section>
+
+    <section id="conclusion">
+
     </section>
 
 
+    <!-- JS FILES/LIBRARIES LINKED -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+    <!-- <script src="title.js"></script> -->
+    <script src="horizontal-scroll.js"></script>
+    <script type="text/javascript" src="skrollr.js"></script>
+	<script type="text/javascript">
+	    var s = skrollr.init();
+	</script>
 </body>
-
-
-
-
-
 
 
 </html>
