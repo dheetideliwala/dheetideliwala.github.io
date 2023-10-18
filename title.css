@@ -5,13 +5,17 @@
 }
 
 .title-map {
-    flex: 7;
-    width: 70vw;
+    flex: 69;
 }
 
-svg {
-    width:70vw;
-    height:100vh;
+#states-all-map {
+    /* width:70vw;
+    height:100vh; */
+    width: 100%;
+    height: 100%;
+
+    margin-left: 3px;
+
 }
 
 .state {
@@ -27,7 +31,13 @@ svg {
 }
 
 .highlighted  {
-    fill: #5b852a;
+    fill: #D39F29;
+    stroke: black;
+    stroke-width: 2;
+}
+
+.auto {
+    fill:#5b852a;
     stroke: black;
     stroke-width: 2;
 }
@@ -36,20 +46,23 @@ svg {
 /* Text Styling */
 .title-text {
     text-align: right;
-    width: 30vw;
 
-    flex: 3;
+    flex: 31;
+
+    padding-right: 40px;
+
+    z-index: 1;
+
 }
 
 h1.headline {
     font-family: Raleway;
-    font-size: 50pt;
-    font-weight: 500;
+    font-size: 47pt;
+    font-weight: 600;
     color: #28386C;
     line-height: 1.1;
     
     padding-top: 200px;
-    padding-right: 30px;
 
     margin-bottom: 15px;
 }
@@ -59,15 +72,13 @@ h3.Gerry {
     font-size: 29pt;
     color: #D39F29;
 
-    padding-right: 30px;
     
 }
 
 h6.subtitle {
     font-family: Raleway;
-    font-size: 20pt;
+    font-size: 22pt;
     font-weight: 500;
     color: gray;
 
-    padding-right: 30px;
  }

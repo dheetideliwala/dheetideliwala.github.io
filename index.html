@@ -12,6 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway:wght@700&display=swap" rel="stylesheet">    
 
 
@@ -38,15 +39,16 @@
 
 
 <body>
+
     <section id="title">
         <div class="title">
             <div class="title-map">
+                <!-- only issue is that the already highlighted districts get unhighlighted -->
                 <svg id='states-all-map'></svg>
             </div>
             <div class="title-text">
                 <h1 class="headline">Independent</br>Redistricting</br>Commissions</h1>
                 <h6 class="subtitle">and their fight against</p>
-                <!-- could add a transition here every two seconds that changes a letter in gerrymandering to another fancy letter -->
                 <h3 class="Gerry">Gerrymandering</h3>
             </div>
         </div>
@@ -228,7 +230,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src='https://d3js.org/d3.v5.min.js'></script>
     <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
-    <!-- <script src="title.js"></script> -->
+    <script src="title.js"></script>
     <script src="horizontal-scroll.js"></script>
     <script type="text/javascript" src="skrollr.js"></script>
 	<script type="text/javascript">

@@ -2,14 +2,16 @@
 var usaSvg = d3.select('#states-all-map')
 var usaSvgWidth = usaSvg.node().clientWidth;
 var usaSvgHeight = usaSvg.node().clientHeight;
-var stateSvgWidth = usaSvgWidth - 300;
-var stateSvgHeight = usaSvgHeight - 240;
+// var stateSvgWidth = usaSvgWidth - 300;
+// var stateSvgHeight = usaSvgHeight - 240;
 
 var usaMapData;
 
 var usaProjection;
 
-Promise.all([d3.json('Congressional_Districts.geojson')])
+var autoStates = [];
+    
+Promise.all([d3.json('118th_Congressional_Districts.geojson')])
                     .then(data => {
             usaMapData = data[0];
 
@@ -21,49 +23,64 @@ Promise.all([d3.json('Congressional_Districts.geojson')])
             usaSvg.selectAll('.state')
                     .data(usaMapData.features)
                     .join('path')
-                    .classed('state',true)
-                    .attr('d',geoPath)
-                    .on('mouseover', function(d,i) {
-                        console.log(`Mouseover on ${d.properties.OFFICE_ID} and state ${d.properties.STATEFP20}`)
-                        d3.select(this).classed('highlighted', true)
-                        // trying to highlight to whole state based on geojson objects that have the same state id
-                        highlightSelectedState(d.properties.STATEFP20);
+                    .attr('class', function(d) {
+                        return d.properties.STATEABBR;
                     })
-                    .on('mouseout', function(d,i) {
-                        console.log(`Mouseout on ${d.properties.OFFICE_ID}`)
-                        removeSelectedState()
-                        d3.select(this).classed('highlighted',false);
+                    .classed('state',true)
+                    .attr('id', function(d) {
+                        return d.properties.id;
+                    })
+                    .attr('d',geoPath)
+                    .on('mouseover', function(d) {
+                        
+                        var state = document.getElementsByClassName(d.properties.STATEABBR);
+
+                        for(var i = 0; i < state.length; i++) {
+                            state[i].classList.add("highlighted") 
+                            state[i].classList.remove("auto")
+                        }
+
+                    })
+                    .on('mouseout', function(d) {
+
+                        var state = document.getElementsByClassName(d.properties.STATEABBR);
+ 
+                        for(var i = 0; i < state.length; i++) {
+                            state[i].classList.remove("highlighted")
+                        }
+
+                        console.log(autoStates)
+                        for(var i = 0; i < autoStates.length; i++) {
+                            var district = document.getElementById(autoStates[i])
+                            // console.log(autoStates[i])
+                            district.classList.add("auto")
+                        }
                     });
             
-        });
+                });
 
-function highlightSelectedState(state) {
-    let filteredFeatures = usaMapData.features.filter(function (feature) {
-        return feature.properties.STATEFP20 == state;
-    });
+// var x = 0;
+randomStates = document.getElementsByClassName("state")
 
-    let filteredStates = {
-        "name":"SelectedState",
-        "type":"FeatureCollection",
-        "features":filteredFeatures
-    };
+let interval = setInterval(function () {
+    // x = x + 3;
 
-    console.log(filteredStates);
+    if (randomStates.length == 0) {
+        clearInterval(interval)
+    }
 
-    usaProjection = d3.geoAlbersUsa()    
-                               .fitSize([stateSvgWidth, stateSvgHeight], filteredStates);
-            
-    const geoPath = d3.geoPath().projection(usaProjection);
 
-    // how can i made the selected district a different color, using the filter conditional on the district's ID
-    usaSvg.selectAll('.selectedstate')
-        .data(filteredStates.features)
-        .join('path')
-        .classed('selectedstate', true)
-        .attr('transform',`translate(${usaSvgWidth/4 - 125},${usaSvgHeight/3-125})`)
-        .attr('d', geoPath)
-}
+    for(var i = 0; i < 3; i++) {
+        randomStates = document.getElementsByClassName("state")
+        console.log(randomStates)
 
-function removeSelectedState() {
-    usaSvg.selectAll('.selectedstate').remove();
-}
+        let random = Math.floor(Math.random() * randomStates.length);
+        // console.log(random)
+        autoStates.push(randomStates[random].id)
+        randomStates[random].classList.add("auto")
+        randomStates[random].classList.remove("state")
+        // console.log(randomStates[random])
+        // console.log(randomStates[random].id)
+    }
+
+}, 500);
