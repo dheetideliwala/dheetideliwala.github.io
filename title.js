@@ -11,7 +11,7 @@ var usaProjection;
 
 var autoStates = [];
     
-Promise.all([d3.json('118th_Congressional_Districts.geojson')])
+Promise.all([d3.json('data/118th_Congressional_Districts.geojson')])
                     .then(data => {
             usaMapData = data[0];
 
@@ -49,7 +49,7 @@ Promise.all([d3.json('118th_Congressional_Districts.geojson')])
                             state[i].classList.remove("highlighted")
                         }
 
-                        console.log(autoStates)
+                        // console.log(autoStates)
                         for(var i = 0; i < autoStates.length; i++) {
                             var district = document.getElementById(autoStates[i])
                             // console.log(autoStates[i])
@@ -72,7 +72,7 @@ let interval = setInterval(function () {
 
     for(var i = 0; i < 3; i++) {
         randomStates = document.getElementsByClassName("state")
-        console.log(randomStates)
+        // console.log(randomStates)
 
         let random = Math.floor(Math.random() * randomStates.length);
         // console.log(random)
