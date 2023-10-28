@@ -18,8 +18,7 @@
 
     <!-- CSS FILES LINED -->
     <!-- <link href="normalize.css" rel="stylesheet"> -->
-    <link href="styles.css" rel="stylesheet">
-    <link href="metrics.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" /> 
 
@@ -90,13 +89,13 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">Fortunately, the U.S. Constitution and  state constitutions include guidelines that ought to be followed, which reduces the number of valid maps that can be drawn.</p>
+                <p class="step">Fortunately, the U.S. Constitution and  state constitutions include guidelines that must be followed, which reduces the number of valid maps that can be drawn.</p>
             </div>
             <div class="background-text">
-                <p class="step">Legally, districts must <span style="color:#8888ab; font-weight: 700;">have equal population</span>, <span style="color:#8888ab; font-weight: 700;">be contiguous</span> &#40;or connected&#41;, <span style="color:#8888ab; font-weight: 700;">be geographically compact</span>.</p>
+                <p class="step">Legally, districts must <span style="color:#8888ab; font-weight: 700;">have equal population</span>, <span style="color:#8888ab; font-weight: 700;">be contiguous</span> &#40;or connected&#41;, and <span style="color:#8888ab; font-weight: 700;">be geographically compact</span>.</p>
             </div>
             <div class="background-text">
-                <p class="step">To easily sift through the complex nature of Census precincts and requirements, mathematicians have created a few algorithms that redraw districts using objective math and simple logic.</p>
+                <p class="step">To ease the complex redistricting process, mathematicians have created algorithms that redraw districts using objective math and simple logic.</p>
             </div>
         </article>
     </section>
@@ -104,7 +103,7 @@
     <section id="districting-2">
         <article class="districting">
             <div class="districting-text">
-                <p class="step"><span style="color:#8888ab; font-weight: 700;">The Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> seeks to create unbiased and simple-shaped districts. The Shortest Splitline Method splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
+                <p class="step">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> seeks to create unbiased and simple-shaped districts. The Shortest Splitline Method splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
             </div>
             <div class="districting-text">
                 <p class="step"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> seeks to create optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
@@ -134,7 +133,7 @@
                 <!-- add in subtitle of partisan lean for the three images -->
             </div>
             <div class="districting-text">
-                <p class="step">But these political maps could, and historically have, landed states in judicial battles about a person's right to vote and be represented fairly.</p>
+                <p class="step">But these political maps could land states in judicial battles about a person's right to vote and be represented fairly.</p>
                 <!-- subtitle with court cases -->
             </div>
         </article>
@@ -142,7 +141,6 @@
         <!-- will also have to fix images with white border -->
         <img id="political" src="images/AZ_Dem.png">
     </section>
-
 
     <!-- 
         <img class="AZ-slides" src="" id="AZ-slides" style="background-size: cover; width: 100%;">
@@ -168,13 +166,13 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">Using Census, election, and geographical data, metrics about each map can be calculated. These metrics can explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
+                <p class="step">Using Census, election, and geographical data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
             </div>
             <div class="background-text">
                 <p class="step">Compounding the values of one metric calculated from thousands of maps that follow constitutional guidelines, we can plot a histogram. With all the maps plotted, we can then compare where one specific map lies in relation to the rest, the average, and the median.</p>
             </div>
             <div class="background-text">
-                <p class="step">Researchers have been able to create thousands of potential maps through the process of  <span style="color:#8888ab; font-weight: 700;">Markov Chain Monte Carlo</span>. Once they create a large and representative sample of how one state might be redistricted, they can compare it to the enacted state maps using the metrics below.</p>
+                <p class="step">Researchers have been able to quickly create thousands of potential maps through the process of  <span style="color:#8888ab; font-weight: 700;">Markov Chain Monte Carlo</span>. With a large and representative sample of a redrawn state map, we can compare one enacted state map to thousands using the metrics below.</p>
                 <!-- <p class="subtitle">Researchers at Harvard, under the ALARM Project, wrote an MCMC R program to create representative samples for each state.</p> -->
             </div>
         </article>
@@ -185,59 +183,78 @@
             <!-- i think i should make it just vertical with scroll-snap-type -->
             <div class="scroll-section"> 
                 <div class="metric">
-                    <h1>Expected Number of Seats</h1>
+                    <h2>Expected Number of Democratic Seats</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="margin-bottom: 40px; color:#5b852a;">Using election data from previous years, we can simulate elections in redistricted states to calculate how many Democratic seats a map would yield.</p>
+                            <p>In Pennsylvania, the average expected number of Democratic seats from all simulated plans is 8.1 seats out of 17. In contrast, the expected number of Democratic seats from the enacted plan is 9.3 seats out of 17. <span style="font-weight: 600; color:#d3a029;">The enacted plan yields more Democratic seats than 100% of the simulated plans</span>, showing that the enacted plan is a statistical outlier and gives the Democratic Party an advantage.</p>
+                        </div>
+                        <div class="graphs" id="PA_seats"></div>
+                    </div>
                 </div>
                 <div class="metric">
-                    <h1>Election Results by districts</h1>
+                    <h2>Election Results by districts</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="color:#5b852a;">Using election data from previous years, we can also see how the enacted plan compares to the simulated plans at the district level. We plot each district's democratic vote percentage in each simulated map as a dot, and mark the democratic vote percentage of the districts in the enacted plan with a black dot.
+                                This allows us to see if the enacted plan has cracked or packed voters of one specific party in order to dilute their voting power.</p>
+                            <p style="margin-bottom: 40px;">Cracking splits voters of one political party across multiple districts, so they're unable to gain a majority in districts to elect their preferred candidate. Packing crams voters of one political party into a few districts; they are able to elect candidates of their choice in packed districts, but their voting power is diluted in all other districts.</p>
+                        </div>
+                        <div class="graphs" id="PA_districts"></div>
+                    </div>
                 </div>
                 <div class="metric">
-                    <h1>Deviation from Partisan Symmetry</h1>
+                    <h2>Deviation from Partisan Symmetry</h2>
                 </div>
                 <div class="metric">
-                    <h1>Efficiency Gap</h1>
+                    <h2>Efficiency Gap</h2>
                 </div>
                 <div class="metric">
-                    <h1>Average Polsby Popper</h1>
+                    <h2>Average Polsby Popper</h2>
                 </div>
                 <div class="metric">
-                    <h1>Counties Split</h1>
+                    <h2>Counties Split</h2>
                 </div>
 
             </div>
         </div>
     </div>
 
-    <section id="metrics">
-        <div class="metrics-text">
-            <p>With all these metrics, we can now compare redistricted and enacted maps. These comparisons can help us understand how truly randomized or influenced the redrawing of districts and maps might have been, but</br><span style="color:#d3a029; font-weight: 700;">Whose maps are we checking?</span></p>
+    <section id="background">
+        <article class="background">
+            <div class="background-text">
+                <p class="step">With these metrics, we are able to compare simulated and enacted maps. Comparing enacted maps with randomized simulations can help us understand if enacted maps are truly objective or have been heavily manipulated, but <span style="color:#d3a029; font-weight: 700;">Exactly whose maps are we checking?</span></p>
+            </div>
         </div>
     </section>
 
-    <section id="gerrymandering">
-        <div class="gerrymandering">
-            <p>Written in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.</p>
-            </br>
-            <p>Naturally, those in power have an incentive to stay in power. So, giving state legislators the responsibility to draw districts, and ultimately choose their voters, in a way that advantages them in elections opens up the possibility of unfair redistricting practices.</p>
-            </br>
-            <p>The practice of redistricting with the intent to disadvantage the opposing political party or advantage one's own political party is called <span style="color:#8888ab; font-weight: 700;">gerrymandering</span>.</p>
-            </br>
-            <!-- should add links here to SCOTUS cases -->
-            <p>Thankfully, gerrymandering has become easier to uncover through the same process of how we analyzed metrics and maps above. That type of analysis was actually used in Supreme Court cases against the North Carolina and Alabama legislatures this past year.</p>
-            </br>
-            <p>In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;"></span>Independent Redistricting Commissions</span>. These are made up of individuals who do not hold office, thus removing the incentive to redistrict to one's advantage.</p>
-            </br>
-            <p>But<br><span style="color:#d3a029; font-weight: 700;">How can we tell if Independent Redistricting Commissions are less likely to gerrymander?</span></p>
-        </div>
+    <section id="background">
+        <article class="background">
+            <div class="background-text">
+                <p class="step">Written in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">Naturally, those in power have an incentive to stay in power. By giving state legislators the responsibility to draw the exact districts they are elected from, those in power are able to select the exact voters they want, usually matching their own political party. This has inevitably led to an unfair redistricting practice called <span style="color:#8888ab; font-weight: 700;">gerrymandering</span>.</p>
+            </div>
+            <div class="background-text">
+                <p class="step"><span style="color:#8888ab; font-weight: 700;">Gerrymandering</span> is the practice of redistricting with the intent to disadvantage opposing political parties or advantage one's own political party.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">Thankfully, gerrymandering has become easier to uncover through the same process of how we analyzed metrics and maps above. This type of analysis was used by the Supreme Court in deciding two federal cases against the North Carolina and Alabama legislatures for unfair redistricting practices this past year.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;">Independent Redistricting Commissions &#40;IRCs&#41;</span>. IRCs are made up of individuals that currently do not hold office, thereby removing the incentive to redistrict to one's advantage. But <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are less likely to gerrymander?</p>
+            </div>
+        </article>
     </section>
 
-    <section id="analysis">
-
+    <section id="background">
+        <article class="background">
+            <div class="background-text">
+                <p class="step"></p>
+            </div>
+        </article>
     </section>
-
-    <section id="conclusion">
-
-    </section>
-
 
     <!-- JS FILES/LIBRARIES LINKED -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -246,10 +263,11 @@
     <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
 
-    <script src="title.js"></script>
-    <script src="horizontal-scroll.js"></script>
-    <script src="scroll.js"></script>
-    <script src="districting.js"></script>
+    <script src="scripts/title.js"></script>
+    <script src="scripts/districting.js"></script>
+    <script src="scripts/horizontal-scroll.js"></script>
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/metrics.js"></script>
 </body>
 
 
