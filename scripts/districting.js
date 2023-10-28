@@ -22,7 +22,7 @@ Promise.all([d3.json('data/MaricopaCounty_VotingPrecincts.geojson')])
                 .attr('d',geoPath)  
 });
 
-const zoom = d3.zoom()
+var zoom = d3.zoom()
     .scaleExtent([1, 4])
     .on('zoom',zoomed)
     maricopaSvg.call(zoom);

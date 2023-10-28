@@ -28,6 +28,7 @@ Promise.all([d3.json('data/118th_Congressional_Districts.geojson')])
                     })
                     .classed('state',true)
                     .attr('id', function(d) {
+                        // console.log(d.properties.STATEABBR, d.properties.id)
                         return d.properties.id;
                     })
                     .attr('d',geoPath)
@@ -77,10 +78,12 @@ let interval = setInterval(function () {
         let random = Math.floor(Math.random() * randomStates.length);
         // console.log(random)
         autoStates.push(randomStates[random].id)
+        // console.log(randomStates[random].id)
         randomStates[random].classList.add("auto")
         randomStates[random].classList.remove("state")
         // console.log(randomStates[random])
         // console.log(randomStates[random].id)
     }
+    // console.log(autoStates)
 
 }, 500);

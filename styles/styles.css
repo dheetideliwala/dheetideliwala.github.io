@@ -288,3 +288,69 @@ h4.subtitle {
     color: #8888ab;
 }
  */
+
+ /* METRICS */
+ .description {
+    font-family: Raleway;
+    font-size: 20pt;
+
+    padding-left: 40px;
+
+    width: 50vw;
+    
+    flex: 2;
+ }
+
+ .graphs {
+    flex: 3;
+    height: 100vh;
+ }
+
+ .metric h2 {
+    font-family: "Raleway";
+    font-size: 50px;
+    font-weight: 600;
+
+    color: #28386C;
+
+    padding: 10px;
+    padding-bottom: 20px;
+
+    text-align: center;
+ }
+
+.sticky-parent {
+    height: 600vh;
+}
+
+.sticky {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.scroll-section {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 600vw;
+    will-change: transform;
+    display: flex;
+    /* spaces images out evently */
+    /* justify-content: space-between; */
+    /* centered vertically */
+    align-items: center;
+    /* padding: 0 5vw; */
+}
+
+.metric {
+    width: 100vw;
+    height: 100vh;
+    border-top: 2px solid #28386C;
+    border-left: 2px solid #28386C;
+    border-bottom: 2px solid #28386C;
+    padding: 10px;
+}
+
+.content {display: flex;}
