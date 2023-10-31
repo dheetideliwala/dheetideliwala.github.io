@@ -57,7 +57,7 @@
     <section id="background"> 
         <article class="background">
             <div class="background-text">
-                <p class="step">Every 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">E</span>very 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
             </div>
             <div class="background-text">
                 <p class="step">With each decade's population change, the number of representatives granted to each state is adjusted in order to preserve the proportional nature of the U.S. House of Representatives. This process of reassigning the number of representatives is called <span style="color:#8888ab; font-weight: 700;">reapportionment</span>.</p>
@@ -75,7 +75,7 @@
     <section id="districting-1">
         <article class="districting">
             <div class="districting-text">
-                <p class="step">The U.S. Census breaks states into much smaller sections called <span style="color:#8888ab; font-weight: 700;">voting precincts</span>. Voting precincts are the building blocks that are used to make up congressional districts.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 30pt;">T</span>he U.S. Census breaks states into much smaller sections called <span style="color:#8888ab; font-weight: 700;">voting precincts</span>. Voting precincts are the building blocks that are used to make up congressional districts.</p>
                 <p class="subtitle">The map on the right shows the voting precincts in Maricopa County. By zooming in, you might be able to tell what cluster of precincts represent the city of Phoenix.</p>
             </div>
             <div class="districting-text">
@@ -103,13 +103,16 @@
     <section id="districting-2">
         <article class="districting">
             <div class="districting-text">
-                <p class="step">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> seeks to create unbiased and simple-shaped districts. The Shortest Splitline Method splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
+                <p class="step">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> creates simply shaped districts. This algorithm splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
+                <p class="subtitle">Created by Warren D. Smith</br>at <a href="https://rangevoting.org/GerryExec.html">The Center for Range Voting</a></p>
             </div>
             <div class="districting-text">
-                <p class="step"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> seeks to create optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
+                <p class="step"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> creates optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
+                <p class="subtitle">Created by Brian Olson at <a href="https://bdistricting.org/2020/">BDistricting</a></p>
             </div>
             <div class="districting-text">
                 <p class="step">Like Olson's algorithm, the <span style="color:#8888ab; font-weight: 700;">Voronoi algorithm</span><!--, created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young,--> seeks to create optimally compact districts. However, the Voronoi algorithm uses the sum of squared distances between residents and the center to measure compactness.</p>
+                <p class="subtitle">Created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young at <a href="http://district.cs.brown.edu/">Brown University</a></p>
             </div>
         </article>
 
@@ -166,12 +169,12 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">Using Census, election, and geographical data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing Census, election, and geographical data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
             </div>
             <div class="background-text">
                 <p class="step">Compounding the values of one metric calculated from thousands of maps that follow constitutional guidelines, we can plot a histogram. With all the maps plotted, we can then compare where one specific map lies in relation to the rest, the average, and the median.</p>
             </div>
-            <div class="background-text">
+            <div class="background-text" style="margin-bottom: 40px;">
                 <p class="step">Researchers have been able to quickly create thousands of potential maps through the process of  <span style="color:#8888ab; font-weight: 700;">Markov Chain Monte Carlo</span>. With a large and representative sample of a redrawn state map, we can compare one enacted state map to thousands using the metrics below.</p>
                 <!-- <p class="subtitle">Researchers at Harvard, under the ALARM Project, wrote an MCMC R program to create representative samples for each state.</p> -->
             </div>
@@ -186,34 +189,75 @@
                     <h2>Expected Number of Democratic Seats</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="margin-bottom: 40px; color:#5b852a;">Using election data from previous years, we can simulate elections in redistricted states to calculate how many Democratic seats a map would yield.</p>
+                            <p style="margin-bottom: 30px; color:#5b852a;">Using election data from previous years, we can simulate elections in redistricted states to calculate how many Democratic seats a map would yield.</p>
                             <p>In Pennsylvania, the average expected number of Democratic seats from all simulated plans is 8.1 seats out of 17. In contrast, the expected number of Democratic seats from the enacted plan is 9.3 seats out of 17. <span style="font-weight: 600; color:#d3a029;">The enacted plan yields more Democratic seats than 100% of the simulated plans</span>, showing that the enacted plan is a statistical outlier and gives the Democratic Party an advantage.</p>
                         </div>
                         <div class="graphs" id="PA_seats"></div>
                     </div>
                 </div>
                 <div class="metric">
-                    <h2>Election Results by districts</h2>
+                    <h2>Election Results by Districts</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a;">Using election data from previous years, we can also see how the enacted plan compares to the simulated plans at the district level. We plot each district's democratic vote percentage in each simulated map as a dot, and mark the democratic vote percentage of the districts in the enacted plan with a black dot.
-                                This allows us to see if the enacted plan has cracked or packed voters of one specific party in order to dilute their voting power.</p>
-                            <p style="margin-bottom: 40px;">Cracking splits voters of one political party across multiple districts, so they're unable to gain a majority in districts to elect their preferred candidate. Packing crams voters of one political party into a few districts; they are able to elect candidates of their choice in packed districts, but their voting power is diluted in all other districts.</p>
+                            <p style="color:#5b852a; margin-bottom: 30px;">We can also use those simulated elections to compare the enacted plan to the simulated plans at the district level. Using the Democratic vote percentage, we can mark where each district for each map falls.</p>
+                            <p>Still following Pennsylvannia, we note Districts 8 and 9. Both of these districts have a majority of simulated plans resulting in Republican seats, while the enacted plan results in Democratic seats. <span style="font-weight: 600; color:#d3a029;">This shows the enacted plan created two more majority-Democratic seats than the vast majority of simulated plans</span>, giving the Democratic Party an advantage.</p>                        
                         </div>
-                        <div class="graphs" id="PA_districts"></div>
+                        <div class="graphs" id="PA_districts">
+                            <img id="PA_districts" src="images/PA_cd_2020_districts.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="metric">
+                    <h2>Packing found in Election Results by Districts</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="color:#5b852a; margin-bottom: 30px;">Packing is technique of redistricting that dilutes a political party's voting power by cramming voters of that party in as few districts as possible. This dilutes the party's voting power in all other districts.</p>
+                            <p>In Alabama, District 7 in the enacted plan has a Democratic Party vote margin more than 20 points above the average for that district from all simulated plans. <span style="font-weight: 600; color:#d3a029;">The difference in margin is created from packing Democrats into District 7, making that one district significantly more Democratic and the remainder of districts significantly more Republican.</span></p>
+                        </div>
+                        <div class="graphs">
+                            <img id="AL_districts" src="images/AL_cd_2020_districts.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="metric">
                     <h2>Deviation from Partisan Symmetry</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="color:#5b852a; margin-bottom: 30px;">Deviation from Partisan Symmetry can show how favorable a plan is to a political party. This metric measures the excess seat share above 50% that the Republican Party earns when their vote share is 50%.</p>
+                            <p>In Ohio, the average deviation of all simulated plans is .03, meaning that the Republican Party yields 53% of the seat share with 50% of the vote. The enacted plan has a deviation of .11, guaranteeing the Republican Party 61% of the seat share. <span style="font-weight: 600; color:#d3a029;">Because it yields more seat share with the same vote share, the enacted plan is more favorable to the Republican party than the majority of simulated plans.</span></p>
+                        </div>
+                        <div class="graphs" id="OH_psym"></div>
+                    </div>
                 </div>
                 <div class="metric">
                     <h2>Efficiency Gap</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="color:#5b852a; margin-bottom: 30px; font-size: 18pt !important;">The Efficiency Gap compares the number of wasted votes between the Republican and Democratic Party. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated from subtracting the number of lost Democratic votes from lost Republican votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
+                            <p style="font-size:18pt !important;">In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
+                        </div>
+                        <div class="graphs" id="FL_egap"></div>
+                    </div>
                 </div>
                 <div class="metric">
                     <h2>Average Polsby Popper</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="color:#5b852a; margin-bottom: 30px;">Polsby Popper is a metric from 0 to 1 &#40;a circle&#41; used to measure the geographical compactness of a district. The average Polsby Popper of a map is found by averaging the Polsby Popper score of each district in a map.</p>
+                            <p>In Illinois, the average Polsby Popper score for all simulated plans is 0.26. The enacted plan has an average Polsby Popper score of 0.14. <span style="font-weight: 600; color:#d3a029;">The enacted plan's average Polsby Popper score is less than 100% of all simulated plans</span>, meaning it is less compact than all the simulated plans and may include intentionally awkwardly-drawn districts for political advantage.</p>
+                        </div>
+                        <div class="graphs" id="IL_polsby"></div>
+                    </div>
                 </div>
                 <div class="metric">
                     <h2>Counties Split</h2>
+                    <div class="content">
+                        <div class="description">
+                            <p style="color:#5b852a; margin-bottom: 30px;">Counties split counts the number of counties that are split amongst multiple districts.</p>
+                            <p>In South Carolina, an average of 5 counties were split in all simulated plans, whereas 10 counties were split in the enacted plan. <span style="font-weight: 600; color:#d3a029;">The enacted plan splits more counties than 100% of simulated plans</span>, pointing to more intentionally drawn districts that do not follow the constitutional guideline &#40;respecting existing counties&#41; as best as it could.</p>
+                        </div>
+                        <div class="graphs" id="SC_county"></div>
+                    </div>
                 </div>
 
             </div>
@@ -223,7 +267,7 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">With these metrics, we are able to compare simulated and enacted maps. Comparing enacted maps with randomized simulations can help us understand if enacted maps are truly objective or have been heavily manipulated, but <span style="color:#d3a029; font-weight: 700;">Exactly whose maps are we checking?</span></p>
+                <p class="step">With these partisan and geographic metrics, we are able to compare simulated and enacted maps. Comparing enacted maps with randomized simulations can help us understand if enacted maps are truly objective or have been heavily manipulated, but <span style="color:#d3a029; font-weight: 700;">Exactly whose maps are we checking?</span></p>
             </div>
         </div>
     </section>
@@ -231,7 +275,7 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">Written in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">W</span>ritten in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.</p>
             </div>
             <div class="background-text">
                 <p class="step">Naturally, those in power have an incentive to stay in power. By giving state legislators the responsibility to draw the exact districts they are elected from, those in power are able to select the exact voters they want, usually matching their own political party. This has inevitably led to an unfair redistricting practice called <span style="color:#8888ab; font-weight: 700;">gerrymandering</span>.</p>
@@ -243,7 +287,10 @@
                 <p class="step">Thankfully, gerrymandering has become easier to uncover through the same process of how we analyzed metrics and maps above. This type of analysis was used by the Supreme Court in deciding two federal cases against the North Carolina and Alabama legislatures for unfair redistricting practices this past year.</p>
             </div>
             <div class="background-text">
-                <p class="step">In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;">Independent Redistricting Commissions &#40;IRCs&#41;</span>. IRCs are made up of individuals that currently do not hold office, thereby removing the incentive to redistrict to one's advantage. But <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are less likely to gerrymander?</p>
+                <p class="step">In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;">Independent Redistricting Commissions &#40;IRCs&#41;</span>. IRCs are made up of individuals that currently do not hold office, thereby removing the incentive to redistrict to one's advantage. </p>
+            </div>
+            <div class="background-text">
+                <p class="step">After the 2010 U.S. Census, only Arizona, California, Idaho, and Washington had IRCs to redistrict. By 2020, Colorado, Michigan, Montana, and New York changed to IRCs. More states are beginning to see the value in shifting to IRCs, but <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are less likely to gerrymander?</div>
             </div>
         </article>
     </section>
@@ -267,7 +314,7 @@
     <script src="scripts/districting.js"></script>
     <script src="scripts/horizontal-scroll.js"></script>
     <script src="scripts/scroll.js"></script>
-    <script src="scripts/metrics.js"></script>
+    <!-- <script src="scripts/metrics.js"></script> -->
 </body>
 
 
