@@ -100,7 +100,6 @@ h6.subtitle {
     font-size: 22pt;
     font-weight: 500;
     color: gray;
-
  }
  
 
@@ -128,7 +127,6 @@ article.background {
 
     padding: 20px 10px;
 
-    opacity: .3;
     text-align: left;
 }
 
@@ -193,7 +191,7 @@ article.districting {
 
 .districting-text {
     color: black;
-    /* opacity: .3; */
+    opacity: .3;
 
     font-size: 27px;
     font-family: Raleway;
@@ -205,6 +203,7 @@ article.districting {
 
     border-left: 10px solid;
     border-left-color: white;
+    
 }
 
 .districting-text:last-child {
@@ -225,9 +224,15 @@ p.subtitle {
 
     padding-right: 40px;
 
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
+
+    font-style: italic;
 }
+
+/* .sub-active {
+    opacity: 1 !important;
+} */
 
 #districting-2 {
     position: relative;
@@ -244,18 +249,21 @@ p.subtitle {
     margin-bottom: 40px;
 }
 
+.figure {
+    border: 1px solid #28386C;
+    border-style:groove; 
+}
+
 #algorithm {
     position: -webkit-sticky;
     position: sticky;
     width: 100%;
-    padding: 1px;
+    margin: 0;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     z-index: 0;
-
-    border: 1px solid #28386C;
-    border-style:groove; 
+    object-fit: contain;
 }
 
 #districting-3 {
@@ -282,10 +290,8 @@ p.subtitle {
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     z-index: 0;
-
-    border: 1px solid #28386C;
-    border-style:groove; 
 }
+
 /*
 .districting-images {
     flex: 4;

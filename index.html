@@ -80,7 +80,7 @@
             </div>
             <div class="districting-text">
                 <p class="step">With thousands of precincts in each state, the number of maps that can be drawn are endless.</p>
-            </div>
+            </div> 
         </article>
 
         <svg id="maricopa"></svg>
@@ -103,20 +103,22 @@
     <section id="districting-2">
         <article class="districting">
             <div class="districting-text">
-                <p class="step">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> creates simply shaped districts. This algorithm splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
+                <p class="step" style="font-size: 30px;">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> creates simply shaped districts. This algorithm splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
                 <p class="subtitle">Created by Warren D. Smith</br>at <a href="https://rangevoting.org/GerryExec.html">The Center for Range Voting</a></p>
             </div>
             <div class="districting-text">
-                <p class="step"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> creates optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
+                <p class="step" style="font-size: 30px;"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> creates optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
                 <p class="subtitle">Created by Brian Olson at <a href="https://bdistricting.org/2020/">BDistricting</a></p>
             </div>
-            <div class="districting-text">
-                <p class="step">Like Olson's algorithm, the <span style="color:#8888ab; font-weight: 700;">Voronoi algorithm</span><!--, created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young,--> seeks to create optimally compact districts. However, the Voronoi algorithm uses the sum of squared distances between residents and the center to measure compactness.</p>
+            <div class="districting-text" >
+                <p class="step" style="font-size: 30px;">Like Olson's algorithm, the <span style="color:#8888ab; font-weight: 700;">Voronoi algorithm</span><!--, created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young,--> seeks to create optimally compact districts. However, the Voronoi algorithm uses the sum of squared distances between residents and the center to measure compactness.</p>
                 <p class="subtitle">Created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young at <a href="http://district.cs.brown.edu/">Brown University</a></p>
             </div>
         </article>
 
-        <img id="algorithm" src="images/AZ_Shortest.png">
+        <div class="figure">
+            <img id="algorithm" src="">
+        </div>
     </section>
 
     <section id="background">
@@ -127,36 +129,27 @@
         </article>
     </section>
 
+<!-- 
     <section id="districting-3">
         <article class="districting">
             <div class="districting-text">
                 <p class="step">Maps can also be redrawn to give one political party a competitive advantage or to make districts maximally competitive, while still following all four constitutional guidelines.</p>
             </div>
             <div class="districting-text">
-                <!-- add in subtitle of partisan lean for the three images -->
+                add in subtitle of partisan lean for the three images
             </div>
             <div class="districting-text">
                 <p class="step">But these political maps could land states in judicial battles about a person's right to vote and be represented fairly.</p>
-                <!-- subtitle with court cases -->
+                subtitle with court cases
             </div>
         </article>
 
-        <!-- will also have to fix images with white border -->
-        <img id="political" src="images/AZ_Dem.png">
+        will also have to fix images with white border
+        <div class="figure">
+            <img id="political" src="">
+        </div>
     </section>
-
-    <!-- 
-        <img class="AZ-slides" src="" id="AZ-slides" style="background-size: cover; width: 100%;">
-
-        <script type="text/javascript">
-            let image = document.getElementById('AZ-slides');
-            let images = ['images/districting/AZ_1.png', 'images/districting/AZ_2.png', 'images/districting/AZ_3.png', 'images/districting/AZ_4.png', 'images/districting/AZ_5.png', 'images/districting/AZ_6.png', 'images/districting/AZ_7.png', 'images/districting/AZ_8.png', 'images/districting/AZ_9.png', 'images/districting/AZ_10.png']
-            setInterval(function(){
-                let random = Math.floor(Math.random() * 10);
-                image.src = images[random];
-            }, 1000);
-        </script>
-    -->
+-->
 
     <section id="background">
         <article class="background">
