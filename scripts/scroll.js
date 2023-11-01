@@ -130,7 +130,7 @@ function d2_handleResize() {
 
 // scrollama event handlers
 function d2_handleStepEnter(response) {
-    // console.log(response);
+    console.log("entered ", response.index);
     // response = { element, direction, index }
 
     // add color to current step only
@@ -147,10 +147,12 @@ function d2_handleStepEnter(response) {
 }
 
 function d2_handleStepExit(response) {
-    d2_districting_text.classed("is-active", function(d, i) {
-        if(i === response.index)
-            return false;
-    });
+    console.log("exited ", response.index)
+    d2_districting_text.classed("is-active", false)
+    // d2_districting_text.classed("is-active", function(d, i) {
+    //     if(i === response.index)
+    //         return false;
+    // });
 }
 
 function d2_init() {

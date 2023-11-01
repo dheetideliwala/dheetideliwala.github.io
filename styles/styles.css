@@ -136,7 +136,7 @@ article.background {
     transition: .5s;
 }
 
-p.step {
+.step {
     border-left: 10px solid;
     border-left-color:white;
 
