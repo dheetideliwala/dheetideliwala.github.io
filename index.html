@@ -117,7 +117,7 @@
         </article>
 
         <div class="figure">
-            <img id="algorithm" src="">
+            <img id="algorithm" src="images/AZ_Olson.png">
         </div>
     </section>
 
@@ -182,7 +182,7 @@
                     <h2>Expected Number of Democratic Seats</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="margin-bottom: 30px; color:#5b852a;">Using election data from previous years, we can simulate elections in redistricted states to calculate how many Democratic seats a map would yield.</p>
+                            <p class="definition"><span style="font-weight: 700;">What are the expected number of democratic seats?</span><br>Using election data from previous years, we can simulate elections in redistricted states to calculate how many Democratic seats a map would yield.</p>
                             <p>In Pennsylvania, the average expected number of Democratic seats from all simulated plans is 8.1 seats out of 17. In contrast, the expected number of Democratic seats from the enacted plan is 9.3 seats out of 17. <span style="font-weight: 600; color:#d3a029;">The enacted plan yields more Democratic seats than 100% of the simulated plans</span>, showing that the enacted plan is a statistical outlier and gives the Democratic Party an advantage.</p>
                         </div>
                         <div class="graphs" id="PA_seats"></div>
@@ -192,8 +192,8 @@
                     <h2>Election Results by Districts</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a; margin-bottom: 30px;">We can also use those simulated elections to compare the enacted plan to the simulated plans at the district level. Using the Democratic vote percentage, we can mark where each district for each map falls.</p>
-                            <p>Still following Pennsylvannia, we note Districts 8 and 9. Both of these districts have a majority of simulated plans resulting in Republican seats, while the enacted plan results in Democratic seats. <span style="font-weight: 600; color:#d3a029;">This shows the enacted plan created two more majority-Democratic seats than the vast majority of simulated plans</span>, giving the Democratic Party an advantage.</p>                        
+                            <p class="definition"><span style="font-weight: 700;">What are election results by districts?</span><br>We can also use those simulated elections to compare the enacted plan to the simulated plans at the district level. Using the Democratic vote percentage, we can mark the most Republican to most Democratic district in each plan.</p>
+                            <p style="font-size: 20pt !important;">In Pennsylvannia, we note District 8 and 9, or the 8th and 9th most Republican district, in each plan. The majority of simulated plans have these districts yielding Republican seats, while the enacted plan's districts results in Democratic seats. <span style="font-weight: 600; color:#d3a029;">This shows the enacted plan created two more majority-Democratic seats than the vast majority of simulated plans</span>, giving the Democratic Party an advantage.</p>                        
                         </div>
                         <div class="graphs" id="PA_districts">
                             <img id="PA_districts" src="images/PA_cd_2020_districts.png" alt="">
@@ -204,8 +204,8 @@
                     <h2>Packing found in Election Results by Districts</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a; margin-bottom: 30px;">Packing is technique of redistricting that dilutes a political party's voting power by cramming voters of that party in as few districts as possible. This dilutes the party's voting power in all other districts.</p>
-                            <p>In Alabama, District 7 in the enacted plan has a Democratic Party vote margin more than 20 points above the average for that district from all simulated plans. <span style="font-weight: 600; color:#d3a029;">The difference in margin is created from packing Democrats into District 7, making that one district significantly more Democratic and the remainder of districts significantly more Republican.</span></p>
+                            <p class="definition"><span style="font-weight: 700;">What is packing?</span><br>Packing is technique of redistricting that dilutes a political party's voting power by cramming voters of that party in as few districts as possible. This dilutes the party's voting power in all other districts.</p>
+                            <p style="font-size: 20pt;">In Alabama, the most Democratic district in the enacted plan, labeled District 7, has a Democratic vote margin more than 20 points above the average for the most democratic districts in all simulated plans. <span style="font-weight: 600; color:#d3a029;">The higher margin in the enacted plan is caused by packing Democrats into one district</span>, making that district significantly more Democratic and the remainder of districts significantly more Republican than their comparitive districts in all simulated plans.</p>
                         </div>
                         <div class="graphs">
                             <img id="AL_districts" src="images/AL_cd_2020_districts.png" alt="">
@@ -216,7 +216,7 @@
                     <h2>Deviation from Partisan Symmetry</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a; margin-bottom: 30px;">Deviation from Partisan Symmetry can show how favorable a plan is to a political party. This metric measures the excess seat share above 50% that the Republican Party earns when their vote share is 50%.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is deviation from partisan symmetry?</span><br>Deviation from Partisan Symmetry can show how favorable a plan is to a political party. This metric measures the excess seat share above 50% that the Republican Party earns when their vote share is 50%.</p>
                             <p>In Ohio, the average deviation of all simulated plans is .03, meaning that the Republican Party yields 53% of the seat share with 50% of the vote. The enacted plan has a deviation of .11, guaranteeing the Republican Party 61% of the seat share. <span style="font-weight: 600; color:#d3a029;">Because it yields more seat share with the same vote share, the enacted plan is more favorable to the Republican party than the majority of simulated plans.</span></p>
                         </div>
                         <div class="graphs" id="OH_psym"></div>
@@ -226,8 +226,8 @@
                     <h2>Efficiency Gap</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a; margin-bottom: 30px; font-size: 18pt !important;">The Efficiency Gap compares the number of wasted votes between the Republican and Democratic Party. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated from subtracting the number of lost Democratic votes from lost Republican votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
-                            <p style="font-size:18pt !important;">In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is efficiency gap?</span><br>The Efficiency Gap compares the number of wasted votes between the Republican and Democratic Party. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated from subtracting the number of lost Democratic votes from lost Republican votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
+                            <p style="font-size:19.5pt !important;">In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
                         </div>
                         <div class="graphs" id="FL_egap"></div>
                     </div>
@@ -236,7 +236,7 @@
                     <h2>Average Polsby Popper</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a; margin-bottom: 30px;">Polsby Popper is a metric from 0 to 1 &#40;a circle&#41; used to measure the geographical compactness of a district. The average Polsby Popper of a map is found by averaging the Polsby Popper score of each district in a map.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is polsby popper?</span><br>Polsby Popper is a metric from 0 to 1 &#40;a circle&#41; used to measure the geographical compactness of a district. The average Polsby Popper of a map is found by averaging the Polsby Popper score of each district in a map.</p>
                             <p>In Illinois, the average Polsby Popper score for all simulated plans is 0.26. The enacted plan has an average Polsby Popper score of 0.14. <span style="font-weight: 600; color:#d3a029;">The enacted plan's average Polsby Popper score is less than 100% of all simulated plans</span>, meaning it is less compact than all the simulated plans and may include intentionally awkwardly-drawn districts for political advantage.</p>
                         </div>
                         <div class="graphs" id="IL_polsby"></div>
@@ -246,7 +246,7 @@
                     <h2>Counties Split</h2>
                     <div class="content">
                         <div class="description">
-                            <p style="color:#5b852a; margin-bottom: 30px;">Counties split counts the number of counties that are split amongst multiple districts.</p>
+                            <p class="definition"><span style="font-weight: 700;">What are counties split?</span><br>Counties split counts the number of counties that are split amongst multiple districts.</p>
                             <p>In South Carolina, an average of 5 counties were split in all simulated plans, whereas 10 counties were split in the enacted plan. <span style="font-weight: 600; color:#d3a029;">The enacted plan splits more counties than 100% of simulated plans</span>, pointing to more intentionally drawn districts that do not follow the constitutional guideline &#40;respecting existing counties&#41; as best as it could.</p>
                         </div>
                         <div class="graphs" id="SC_county"></div>
@@ -277,13 +277,13 @@
                 <p class="step"><span style="color:#8888ab; font-weight: 700;">Gerrymandering</span> is the practice of redistricting with the intent to disadvantage opposing political parties or advantage one's own political party.</p>
             </div>
             <div class="background-text">
-                <p class="step">Thankfully, gerrymandering has become easier to uncover through the same process of how we analyzed metrics and maps above. This type of analysis was used by the Supreme Court in deciding two federal cases against the North Carolina and Alabama legislatures for unfair redistricting practices this past year.</p>
+                <p class="step">Thankfully, gerrymandering has become easier to uncover through the same process of how we analyzed metrics and maps above. This type of analysis was used by the Supreme Court in deciding two federal cases against the <a href="https://www.supremecourt.gov/DocketPDF/18/18-422/91120/20190307163214118_18-422%20Brief%20for%20Amicus%20Curiae%20Eric%20S.%20Lander.pdf">North Carolina</a> and <a href="https://www.supremecourt.gov/DocketPDF/22/22-807/275639/20230818110350391_22-807%20Alexander%20v%20SC%20State%20Conf%20of%20the%20NAACP%20BRIEF.pdf">South Carolina</a> state legislatures for unfair redistricting practices.</p>
             </div>
             <div class="background-text">
                 <p class="step">In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;">Independent Redistricting Commissions &#40;IRCs&#41;</span>. IRCs are made up of individuals that currently do not hold office, thereby removing the incentive to redistrict to one's advantage. </p>
             </div>
             <div class="background-text">
-                <p class="step">After the 2010 U.S. Census, only Arizona, California, Idaho, and Washington had IRCs to redistrict. By 2020, Colorado, Michigan, Montana, and New York changed to IRCs. More states are beginning to see the value in shifting to IRCs, but <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are less likely to gerrymander?</div>
+                <p class="step">After the 2010 U.S. Census, only Arizona, California, Idaho, and Washington used IRCs to redistrict. By 2020, Colorado, Michigan, Montana, and New York switched to IRCs over their state legislatures. More states are beginning to see the value in shifting to IRCs, but <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are actually less likely to gerrymander?</div>
             </div>
         </article>
     </section>
@@ -291,7 +291,10 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"></p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing the metrics from above, we can compare how state plans created by IRCs compare to state plans created by state legislatures. Specifically, <span style="color: #8888ab; font-weight: 700;">we are looking to see if IRCs are less likely to produce maps that are statistical outliers when compared to 5,000 simulated plans</span>.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">Below, we have a scatter plot</p>
             </div>
         </article>
     </section>
@@ -299,15 +302,16 @@
     <!-- JS FILES/LIBRARIES LINKED -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src='https://d3js.org/d3.v5.min.js'></script>
-    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
 
     <script src="scripts/title.js"></script>
     <script src="scripts/districting.js"></script>
     <script src="scripts/horizontal-scroll.js"></script>
     <script src="scripts/scroll.js"></script>
-    <!-- <script src="scripts/metrics.js"></script> -->
+    <script src="scripts/metrics.js"></script>
 </body>
 
 

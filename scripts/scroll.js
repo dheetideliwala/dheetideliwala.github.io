@@ -89,7 +89,7 @@ function d1_init() {
         .setup({
             step: "#districting-1 article .districting-text",
             debug: false,
-            offset: 0.5
+            offset: .5
         })
         .onStepEnter(d1_handleStepEnter)
         .onStepExit(d1_handleStepExit);
@@ -128,14 +128,22 @@ function d2_handleResize() {
     d2_scroller.resize();
 }
 
+var j = 0;
+
 // scrollama event handlers
 function d2_handleStepEnter(response) {
-    console.log("entered ", response.index);
+    // console.log("entered ", response.index);
     // response = { element, direction, index }
 
     // add color to current step only
     d2_districting_text.classed("is-active", function (d, i) {
+        // console.log("step", i)
+        if(i == response.index) {
+            j = response.index
+            // console.log("entering", j)
+        }
         return i === response.index;
+        // we can save the value that returns true in this and only remove the class from that value in exit
     });
 
     let image = document.getElementById('algorithm');
@@ -147,12 +155,15 @@ function d2_handleStepEnter(response) {
 }
 
 function d2_handleStepExit(response) {
-    console.log("exited ", response.index)
-    d2_districting_text.classed("is-active", false)
+    // console.log("exited ", response.index)
+    if(response.index == j) {
+        d2_districting_text.classed("is-active", false)
+    }
     // d2_districting_text.classed("is-active", function(d, i) {
-    //     if(i === response.index)
+    //     if(i == response.index) {
     //         return false;
-    // });
+    //     }
+    // })
 }
 
 function d2_init() {

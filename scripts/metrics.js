@@ -1,54 +1,571 @@
+// set the dimensions and margins of the graph
+const margin = {top: 60, right: 20, bottom: 50, left: 40};
+const width = 450 - margin.left - margin.right;
+const height = 350 - margin.top - margin.bottom;
 
-// EXPECTED NUMBER OF DEMOCRATIC SEATS
-var margin = {top: 10, right: 30, bottom: 30, left: 40},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-var svg = d3.select("#PA_seats")
+// EXPECTED DEMOCRATIC SEATS
+const svg = d3.select("#PA_seats")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", "-15 25 465 200")
+    .attr("preserveAspectRatio", "xMinYMin")
   .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+d3.csv("data/PA_cd_2020_stats.csv")
+.then(function(data){
 
-// get the data
-d3.csv("data/PA_cd_2020_stats.csv", function(data) {
+    var seatsData = [];
+    
+    for(i in data) {
+        seatsData.push(data[i]["e_dem"])
+    }
+    // console.log(seatsData)
 
-  // X axis: scale and draw:
-  var x = d3.scaleLinear()
-      .domain([0, 1000])     // can use this instead of 1000 to have the max of data: d3.max(data, function(d) { return +d.price })
-      .range([0, width]);
-  svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+    // X scale
+    const xScale = d3.scaleLinear()
+        .domain([0,17])
+        .range([0, width]);
 
-  // set the parameters for the histogram
-  var histogram = d3.histogram()
-      .value(function(d) { return d.e_dem; })   // I need to give the vector of value
-      .domain(x.domain())  // then the domain of the graphic
-      .thresholds(x.ticks(70)); // then the numbers of bins
+    // Y scale
+    var yScale = d3.scaleLinear()
+        .range([height, 0]);
 
-  // And apply this function to data to get the bins
-  var bins = histogram(data);
+    // set horizontal grid line
+    const GridLine = () => d3.axisLeft().scale(yScale);
+    svg
+        .append("g")
+            .attr("class", "grid")
+        .call(GridLine()
+            .tickSize(-width,0,0)
+            .tickFormat("")
+            .ticks(10)
+        );
 
-  // Y axis: scale and draw:
-  var y = d3.scaleLinear()
-      .range([height, 0]);
-      y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
-  svg.append("g")
-      .call(d3.axisLeft(y));
+    // set vertical grid line
+    const VGridLine = () => d3.axisBottom().scale(xScale);
+    svg
+        .append("g")
+            .attr("class", "grid")
+        .call(VGridLine()
+            .tickSize(height, 0, 0)
+            .tickFormat("")
+            .ticks(10))
 
-  // append the bar rectangles to the svg element
-  svg.selectAll("rect")
-      .data(bins)
-      .enter()
-      .append("rect")
+    svg
+        .append('g')
+        .attr("transform", `translate(0, ${height})`)
+        .call(d3.axisBottom(xScale).tickSize(4).tickPadding(3))
+
+    // set the parameters for the histogram
+    const histogram = d3.bin()
+        .value(d => d)
+        .domain(xScale.domain())
+        .thresholds(xScale.ticks(125));
+
+    // prepare data for bars
+    const bins = histogram(seatsData)
+
+    // Scale the range of the data in the y domain
+    yScale.domain([0, 1000]);
+
+    const yAxis = svg.append("g")
+        .call(d3.axisLeft(yScale).tickSize(3).tickPadding(4))
+
+    // append the bar rectangles to the svg element
+    svg
+    .selectAll("rect")
+        .data(bins)
+    .join("rect")
+        .attr("class", "bar")
         .attr("x", 1)
-        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
-        .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-        .attr("height", function(d) { return height - y(d.length); })
-        .style("fill", "#69b3a2")
+        .attr("transform", d => `translate(${xScale(d.x0)}, ${yScale(d.length)})`)
+        .attr("width", d => xScale(d.x1) - xScale(d.x0))
+        .attr("height", d => height - yScale(d.length))
+        .style("fill", "#8888ab")
 
-});
+    // set X axis label
+    svg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr("x", width/2)
+        .attr("y", height+margin.bottom/1.7)
+        .attr("text-anchor", "middle")
+    .text("Average Number of Democratic Seats");
+
+    // set Y axis label
+    svg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr('transform', 'rotate(-90)')
+        .attr("x", -165)
+        .attr("y", -37)
+        .attr("text-anchor", "start")
+    .text("Number of Plans")
+
+    svg.append("line")
+        .attr("x1", xScale(9.3))
+        .attr("y1", 0)
+        .attr("x2", xScale(9.3))
+        .attr("y2", height)
+        .style("stroke-width", 3)
+        .style("stroke", "#D39F29")
+        .style("fill", "none");
+
+})
+
+// DEVIATION FROM PARTISAN SYMMETRY
+const psymSvg = d3.select("#OH_psym")
+  .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", "-15 25 465 200")
+    .attr("preserveAspectRatio", "xMinYMin")
+  .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+d3.csv("data/OH_cd_2020_stats.csv")
+.then(function(data){
+
+    var seatsData = [];
+    
+    for(i in data) {
+        seatsData.push(data[i]["pbias"])
+    }
+    // console.log(seatsData)
+
+    // X scale
+    const xScale = d3.scaleLinear()
+        .domain([-.05,.15])
+        .range([0, width]);
+
+    // Y scale
+    const yScale = d3.scaleLinear()
+        .range([height, 0]);
+
+    // set horizontal grid line
+    const GridLine = () => d3.axisLeft().scale(yScale);
+    psymSvg
+        .append("g")
+            .attr("class", "grid")
+        .call(GridLine()
+            .tickSize(-width,0,0)
+            .tickFormat("")
+            .ticks(10)
+        );
+
+    // set vertical grid line
+    const VGridLine = () => d3.axisBottom().scale(xScale);
+    psymSvg
+        .append("g")
+            .attr("class", "grid")
+        .call(VGridLine()
+            .tickSize(height, 0, 0)
+            .tickFormat("")
+            .ticks(10))
+
+            psymSvg
+        .append('g')
+        .attr("transform", `translate(0, ${height})`)
+        .call(d3.axisBottom(xScale).tickSize(4).tickPadding(3))
+
+    // set the parameters for the histogram
+    const histogram = d3.bin()
+        .value(d => d)
+        .domain(xScale.domain())
+        .thresholds(xScale.ticks(125));
+
+    // prepare data for bars
+    const bins = histogram(seatsData)
+
+    // Scale the range of the data in the y domain
+    yScale.domain([0, 3500]);
+
+    const yAxis = psymSvg.append("g")
+        .call(d3.axisLeft(yScale).tickSize(3).tickPadding(4))
+
+    // append the bar rectangles to the svg element
+    psymSvg
+    .selectAll("rect")
+        .data(bins)
+    .join("rect")
+        .attr("class", "bar")
+        .attr("x", 1)
+        .attr("transform", d => `translate(${xScale(d.x0)}, ${yScale(d.length)})`)
+        .attr("width", d => xScale(d.x1) - xScale(d.x0))
+        .attr("height", d => height - yScale(d.length))
+        .style("fill", "#8888ab")
+
+    // set X axis label
+    psymSvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr("x", width/2)
+        .attr("y", height+margin.bottom/1.7)
+        .attr("text-anchor", "middle")
+    .text("Deviation from Partisan Symmetry");
+
+    // set Y axis label
+    psymSvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr('transform', 'rotate(-90)')
+        .attr("x", -165)
+        .attr("y", -37)
+        .attr("text-anchor", "start")
+    .text("Number of Plans")
+
+    psymSvg.append("line")
+        .attr("x1", xScale(0.119048))
+        .attr("y1", 0)
+        .attr("x2", xScale(0.119048))
+        .attr("y2", height)
+        .style("stroke-width", 3)
+        .style("stroke", "#D39F29")
+        .style("fill", "none");
+
+})
+
+// EFFICIENCY GAP
+const egapSvg = d3.select("#FL_egap")
+  .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", "-15 25 465 200")
+    .attr("preserveAspectRatio", "xMinYMin")
+  .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+d3.csv("data/FL_cd_2020_stats.csv")
+.then(function(data){
+
+    var seatsData = [];
+    
+    for(i in data) {
+        seatsData.push(data[i]["egap"])
+    }
+    // console.log(seatsData)
+
+    // X scale
+    const xScale = d3.scaleLinear()
+        .domain([-.02,.21])
+        .range([0, width]);
+
+    // Y scale
+    const yScale = d3.scaleLinear()
+        .range([height, 0]);
+
+    // set horizontal grid line
+    const GridLine = () => d3.axisLeft().scale(yScale);
+    egapSvg
+        .append("g")
+            .attr("class", "grid")
+        .call(GridLine()
+            .tickSize(-width,0,0)
+            .tickFormat("")
+            .ticks(10)
+        );
+
+    // set vertical grid line
+    const VGridLine = () => d3.axisBottom().scale(xScale);
+    egapSvg
+        .append("g")
+            .attr("class", "grid")
+        .call(VGridLine()
+            .tickSize(height, 0, 0)
+            .tickFormat("")
+            .ticks(10))
+
+    egapSvg
+        .append('g')
+        .attr("transform", `translate(0, ${height})`)
+        .call(d3.axisBottom(xScale).tickSize(4).tickPadding(3))
+
+    // set the parameters for the histogram
+    const histogram = d3.bin()
+        .value(d => d)
+        .domain(xScale.domain())
+        .thresholds(xScale.ticks(125));
+
+    // prepare data for bars
+    const bins = histogram(seatsData)
+
+    // Scale the range of the data in the y domain
+    yScale.domain([0, 500]);
+
+    const yAxis = egapSvg.append("g")
+        .call(d3.axisLeft(yScale).tickSize(3).tickPadding(4))
+
+    // append the bar rectangles to the svg element
+    egapSvg
+    .selectAll("rect")
+        .data(bins)
+    .join("rect")
+        .attr("class", "bar")
+        .attr("x", 1)
+        .attr("transform", d => `translate(${xScale(d.x0)}, ${yScale(d.length)})`)
+        .attr("width", d => xScale(d.x1) - xScale(d.x0))
+        .attr("height", d => height - yScale(d.length))
+        .style("fill", "#8888ab")
+
+    // set X axis label
+    egapSvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr("x", width/2)
+        .attr("y", height+margin.bottom/1.7)
+        .attr("text-anchor", "middle")
+    .text("Efficiency Gap");
+
+    // set Y axis label
+    egapSvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr('transform', 'rotate(-90)')
+        .attr("x", -165)
+        .attr("y", -37)
+        .attr("text-anchor", "start")
+    .text("Number of Plans")
+
+    egapSvg.append("line")
+        .attr("x1", xScale(0.15865518))
+        .attr("y1", 0)
+        .attr("x2", xScale(0.15865518))
+        .attr("y2", height)
+        .style("stroke-width", 3)
+        .style("stroke", "#D39F29")
+        .style("fill", "none");
+
+})
+
+// POLSBY POPPER
+const ppSvg = d3.select("#IL_polsby")
+  .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", "-15 25 465 200")
+    .attr("preserveAspectRatio", "xMinYMin")
+  .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+d3.csv("data/IL_cd_2020_stats.csv")
+.then(function(data){
+
+    var seatsData = [];
+    
+    for(i in data) {
+        seatsData.push(data[i]["avg_polsby"])
+    }
+    // console.log(seatsData)
+
+    // X scale
+    const xScale = d3.scaleLinear()
+        .domain([.1, .41])
+        .range([0, width]);
+
+    // Y scale
+    const yScale = d3.scaleLinear()
+        .range([height, 0]);
+
+    // set horizontal grid line
+    const GridLine = () => d3.axisLeft().scale(yScale);
+    ppSvg
+        .append("g")
+            .attr("class", "grid")
+        .call(GridLine()
+            .tickSize(-width,0,0)
+            .tickFormat("")
+            .ticks(10)
+        );
+
+    // set vertical grid line
+    const VGridLine = () => d3.axisBottom().scale(xScale);
+    ppSvg
+        .append("g")
+            .attr("class", "grid")
+        .call(VGridLine()
+            .tickSize(height, 0, 0)
+            .tickFormat("")
+            .ticks(10))
+
+    ppSvg
+        .append('g')
+        .attr("transform", `translate(0, ${height})`)
+        .call(d3.axisBottom(xScale).tickSize(4).tickPadding(3))
+
+    // set the parameters for the histogram
+    const histogram = d3.bin()
+        .value(d => d)
+        .domain(xScale.domain())
+        .thresholds(xScale.ticks(125));
+
+    // prepare data for bars
+    const bins = histogram(seatsData)
+
+    // Scale the range of the data in the y domain
+    yScale.domain([0, 260]);
+
+    const yAxis = ppSvg.append("g")
+        .call(d3.axisLeft(yScale).tickSize(3).tickPadding(4))
+
+    // append the bar rectangles to the svg element
+    ppSvg
+    .selectAll("rect")
+        .data(bins)
+    .join("rect")
+        .attr("class", "bar")
+        .attr("x", 1)
+        .attr("transform", d => `translate(${xScale(d.x0)}, ${yScale(d.length)})`)
+        .attr("width", d => xScale(d.x1) - xScale(d.x0))
+        .attr("height", d => height - yScale(d.length))
+        .style("fill", "#8888ab")
+
+    // set X axis label
+    ppSvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr("x", width/2)
+        .attr("y", height+margin.bottom/1.7)
+        .attr("text-anchor", "middle")
+    .text("Average Polsby Popper");
+
+    // set Y axis label
+    ppSvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr('transform', 'rotate(-90)')
+        .attr("x", -150)
+        .attr("y", -37)
+        .attr("text-anchor", "start")
+    .text("Number of Plans")
+
+    ppSvg.append("line")
+        .attr("x1", xScale(0.142865294117647))
+        .attr("y1", 0)
+        .attr("x2", xScale(0.142865294117647))
+        .attr("y2", height)
+        .style("stroke-width", 3)
+        .style("stroke", "#D39F29")
+        .style("fill", "none");
+
+})
+
+// COUNTIES SPLIT
+const countySvg = d3.select("#SC_county")
+  .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", "-15 25 465 200")
+    .attr("preserveAspectRatio", "xMinYMin")
+  .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+d3.csv("data/SC_cd_2020_stats.csv")
+.then(function(data){
+
+    var seatsData = [];
+    
+    for(i in data) {
+        seatsData.push(data[i]["county_splits"])
+    }
+    // console.log(seatsData)
+
+    // X scale
+    const xScale = d3.scaleLinear()
+        .domain([0, 11.5])
+        .range([0, width]);
+
+    // Y scale
+    const yScale = d3.scaleLinear()
+        .range([height, 0]);
+
+    // set horizontal grid line
+    const GridLine = () => d3.axisLeft().scale(yScale);
+    countySvg
+        .append("g")
+            .attr("class", "grid")
+        .call(GridLine()
+            .tickSize(-width,0,0)
+            .tickFormat("")
+            .ticks(10)
+        );
+
+    // set vertical grid line
+    const VGridLine = () => d3.axisBottom().scale(xScale);
+    countySvg
+        .append("g")
+            .attr("class", "grid")
+        .call(VGridLine()
+            .tickSize(height, 0, 0)
+            .tickFormat("")
+            .ticks(10))
+
+    countySvg
+        .append('g')
+        .attr("transform", `translate(0, ${height})`)
+        .call(d3.axisBottom(xScale).tickSize(4).tickPadding(3))
+
+    // set the parameters for the histogram
+    const histogram = d3.bin()
+        .value(d => d)
+        .domain(xScale.domain())
+        .thresholds(xScale.ticks(125));
+
+    // prepare data for bars
+    const bins = histogram(seatsData)
+
+    // Scale the range of the data in the y domain
+    yScale.domain([0, 2500]);
+
+    const yAxis = countySvg.append("g")
+        .call(d3.axisLeft(yScale).tickSize(3).tickPadding(4))
+
+    // append the bar rectangles to the svg element
+    countySvg
+    .selectAll("rect")
+        .data(bins)
+    .join("rect")
+        .attr("class", "bar")
+        .attr("x", 1)
+        .attr("transform", d => `translate(${xScale(d.x0)}, ${yScale(d.length)})`)
+        .attr("width", d => xScale(d.x1) - xScale(d.x0))
+        .attr("height", d => height - yScale(d.length))
+        .style("fill", "#8888ab")
+
+    // set X axis label
+    countySvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr("x", width/2)
+        .attr("y", height+margin.bottom/1.7)
+        .attr("text-anchor", "middle")
+    .text("County Splits");
+
+    // set Y axis label
+    countySvg
+    .append("text")
+        .attr("class", "chart-label")
+        .attr('transform', 'rotate(-90)')
+        .attr("x", -165)
+        .attr("y", -37)
+        .attr("text-anchor", "start")
+    .text("Number of Plans")
+
+    countySvg.append("line")
+        .attr("x1", xScale(10))
+        .attr("y1", 0)
+        .attr("x2", xScale(10))
+        .attr("y2", height)
+        .style("stroke-width", 3)
+        .style("stroke", "#D39F29")
+        .style("fill", "none");
+
+    countySvg.append("text")
+        .attr("class", "chart-label")
+        .attr('transform', 'rotate(-90)')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr("text-anchor", "start")
+    .text("Enacted Plan")
+
+})

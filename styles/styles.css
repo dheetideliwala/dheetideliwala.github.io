@@ -313,7 +313,7 @@ h4.subtitle {
  /* METRICS */
  .description {
     font-family: Raleway;
-    font-size: 20pt;
+    font-size: 21pt;
 
     padding-left: 40px;
 
@@ -377,13 +377,63 @@ h4.subtitle {
 .content {display: flex;}
 
 #AL_districts {
-    width: 90%;
+    width: 92%;
+    margin-left: 2%;
+    /* width: 90%;
     margin-bottom: 10%;
     margin-left: 5%;
-    margin-right: 10%;
+    margin-right: 10%; */
 }
 
 #PA_districts {
-    width: 93%;
-    margin-left: 1%;
+    width: 92%;
+    margin-left: 2%;
+    /* width: 93%;
+    margin-left: 1%; */
+    /* width: 90%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 10%; */
 }
+
+p.definition {
+    margin-bottom: 30px;
+    color:#5b852a;
+    font-style: italic;
+    font-size: 16pt;
+}
+
+
+/* UNHCR */
+svg {
+    width: 100%;
+    height: 100%;
+}
+text {
+    font-family: 'Raleway';
+    font-size: 10px;
+    fill: black;
+    font-weight: 300;
+}
+.grid path {
+    stroke-width: .4;
+    stroke: black;
+}
+.grid .tick line {
+    stroke: #EBEBEB;
+    stroke-width: 1px;
+}
+text.chart-label {
+    font-size: 11px;
+    font-weight: 500;
+    fill: black;
+}
+/* .tooltip {
+    background-color: #ffffff;
+    font-family: 'Raleway';
+    font-size: 11px;
+    padding: 4px;
+    color: #666666;
+    border: none;
+    box-shadow: 0px 0px 3px 0px #E6E6E6;
+} */
