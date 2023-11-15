@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Raleway:wght@700&display=swap" rel="stylesheet">    
 
-
     <!-- CSS FILES LINED -->
     <!-- <link href="normalize.css" rel="stylesheet"> -->
     <link href="styles/styles.css" rel="stylesheet">
@@ -92,7 +91,7 @@
                 <p class="step">Fortunately, the U.S. Constitution and  state constitutions include guidelines that must be followed, which reduces the number of valid maps that can be drawn.</p>
             </div>
             <div class="background-text">
-                <p class="step">Legally, districts must <span style="color:#8888ab; font-weight: 700;">have equal population</span>, <span style="color:#8888ab; font-weight: 700;">be contiguous</span> &#40;or connected&#41;, and <span style="color:#8888ab; font-weight: 700;">be geographically compact</span>.</p>
+                <p class="step">Legally, districts must <span style="color:#8888ab; font-weight: 700;">have equal population</span>, <span style="color:#8888ab; font-weight: 700;">be contiguous</span> &#40;or connected&#41;, and <span style="color:#8888ab; font-weight: 700;">be geographically compact</span>.<span  style="vertical-align: super; font-size: 20pt"><a href="https://redistricting.lls.edu/redistricting-101/where-are-the-lines-drawn/">1</a></span></p>
             </div>
             <div class="background-text">
                 <p class="step">To ease the complex redistricting process, mathematicians have created algorithms that redraw districts using objective math and simple logic.</p>
@@ -117,7 +116,7 @@
         </article>
 
         <div class="figure">
-            <img id="algorithm" src="images/AZ_Olson.png">
+            <img id="algorithm" src="images/AZ_Shortest.png">
         </div>
     </section>
 
@@ -162,7 +161,7 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing Census, election, and geographical data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing Census, election, and geographic data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
             </div>
             <div class="background-text">
                 <p class="step">Compounding the values of one metric calculated from thousands of maps that follow constitutional guidelines, we can plot a histogram. With all the maps plotted, we can then compare where one specific map lies in relation to the rest, the average, and the median.</p>
@@ -204,7 +203,7 @@
                     <h2>Packing found in Election Results by Districts</h2>
                     <div class="content">
                         <div class="description">
-                            <p class="definition"><span style="font-weight: 700;">What is packing?</span><br>Packing is technique of redistricting that dilutes a political party's voting power by cramming voters of that party in as few districts as possible. This dilutes the party's voting power in all other districts.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is packing?</span><br><a href="https://www.brennancenter.org/our-work/research-reports/gerrymandering-explained">Packing</a> is technique of redistricting that dilutes a political party's voting power by cramming voters of that party in as few districts as possible. This dilutes the party's voting power in all other districts.</p>
                             <p style="font-size: 20pt;">In Alabama, the most Democratic district in the enacted plan, labeled District 7, has a Democratic vote margin more than 20 points above the average for the most democratic districts in all simulated plans. <span style="font-weight: 600; color:#d3a029;">The higher margin in the enacted plan is caused by packing Democrats into one district</span>, making that district significantly more Democratic and the remainder of districts significantly more Republican than their comparitive districts in all simulated plans.</p>
                         </div>
                         <div class="graphs">
@@ -216,7 +215,7 @@
                     <h2>Deviation from Partisan Symmetry</h2>
                     <div class="content">
                         <div class="description">
-                            <p class="definition"><span style="font-weight: 700;">What is deviation from partisan symmetry?</span><br>Deviation from Partisan Symmetry can show how favorable a plan is to a political party. This metric measures the excess seat share above 50% that the Republican Party earns when their vote share is 50%.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is deviation from partisan symmetry?</span><br>Deviation from <a href="https://ballotpedia.org/Partisan_symmetry">Partisan Symmetry</a> can show how favorable a plan is to a political party. This metric measures the excess seat share above 50% that the Republican Party earns when their vote share is 50%.</p>
                             <p>In Ohio, the average deviation of all simulated plans is .03, meaning that the Republican Party yields 53% of the seat share with 50% of the vote. The enacted plan has a deviation of .11, guaranteeing the Republican Party 61% of the seat share. <span style="font-weight: 600; color:#d3a029;">Because it yields more seat share with the same vote share, the enacted plan is more favorable to the Republican party than the majority of simulated plans.</span></p>
                         </div>
                         <div class="graphs" id="OH_psym"></div>
@@ -226,7 +225,7 @@
                     <h2>Efficiency Gap</h2>
                     <div class="content">
                         <div class="description">
-                            <p class="definition"><span style="font-weight: 700;">What is efficiency gap?</span><br>The Efficiency Gap compares the number of wasted votes between the Republican and Democratic Party. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated from subtracting the number of lost Democratic votes from lost Republican votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is efficiency gap?</span><br>The <a href="https://planscore.org/metrics/efficiencygap/">Efficiency Gap</a> compares the number of wasted votes between the Republican and Democratic Party. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated from subtracting the number of lost Democratic votes from lost Republican votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
                             <p style="font-size:19.5pt !important;">In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
                         </div>
                         <div class="graphs" id="FL_egap"></div>
@@ -236,7 +235,7 @@
                     <h2>Average Polsby Popper</h2>
                     <div class="content">
                         <div class="description">
-                            <p class="definition"><span style="font-weight: 700;">What is polsby popper?</span><br>Polsby Popper is a metric from 0 to 1 &#40;a circle&#41; used to measure the geographical compactness of a district. The average Polsby Popper of a map is found by averaging the Polsby Popper score of each district in a map.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is polsby popper?</span><br><a href="https://fisherzachary.github.io/public/r-output.html">Polsby Popper</a> is a metric from 0 to 1 &#40;a circle&#41; used to measure the geographical compactness of a district. The average Polsby Popper of a map is found by averaging the Polsby Popper score of each district in a map.</p>
                             <p>In Illinois, the average Polsby Popper score for all simulated plans is 0.26. The enacted plan has an average Polsby Popper score of 0.14. <span style="font-weight: 600; color:#d3a029;">The enacted plan's average Polsby Popper score is less than 100% of all simulated plans</span>, meaning it is less compact than all the simulated plans and may include intentionally awkwardly-drawn districts for political advantage.</p>
                         </div>
                         <div class="graphs" id="IL_polsby"></div>
@@ -268,7 +267,7 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">W</span>ritten in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">W</span>ritten in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.<span style="vertical-align: super; font-size: 20pt"><a href="https://constitution.congress.gov/browse/article-1/section-4/#:~:text=Clause%201%20Elections%20Clause,the%20Places%20of%20chusing%20Senators.">2</a></span></p>
             </div>
             <div class="background-text">
                 <p class="step">Naturally, those in power have an incentive to stay in power. By giving state legislators the responsibility to draw the exact districts they are elected from, those in power are able to select the exact voters they want, usually matching their own political party. This has inevitably led to an unfair redistricting practice called <span style="color:#8888ab; font-weight: 700;">gerrymandering</span>.</p>
@@ -283,7 +282,7 @@
                 <p class="step">In order to combat gerrymandering, some state legislatures have outsourced their redistricting responsibility to <span style="color:#8888ab; font-weight: 700;">Independent Redistricting Commissions &#40;IRCs&#41;</span>. IRCs are made up of individuals that currently do not hold office, thereby removing the incentive to redistrict to one's advantage. </p>
             </div>
             <div class="background-text">
-                <p class="step">After the 2010 U.S. Census, only Arizona, California, Idaho, and Washington used IRCs to redistrict. By 2020, Colorado, Michigan, Montana, and New York switched to IRCs over their state legislatures. More states are beginning to see the value in shifting to IRCs, but <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are actually less likely to gerrymander?</div>
+                <p class="step">After the 2010 U.S. Census, only Arizona, California, Idaho, and Washington used IRCs to redistrict. By 2020, Colorado, Michigan, Montana, and New York switched to IRCs over their state legislatures.<span style="vertical-align: super; font-size: 20pt"><a href="https://redistricting.lls.edu/national-overview/?colorby=Institution&level=Congress&cycle=2010">3</a></span> More states are beginning to see the value in shifting to IRCs, but <span style="color:#d3a029; font-weight: 700;">How can we tell if IRCs are actually less likely to gerrymander?</div>
             </div>
         </article>
     </section>
@@ -294,10 +293,92 @@
                 <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing the metrics from above, we can compare how state plans created by IRCs compare to state plans created by state legislatures. Specifically, <span style="color: #8888ab; font-weight: 700;">we are looking to see if IRCs are less likely to produce maps that are statistical outliers when compared to 5,000 simulated plans</span>.</p>
             </div>
             <div class="background-text">
-                <p class="step">Below, we have a scatter plot</p>
+                <p class="step">The percentile of where an enacted plan falls amongst the 5,000 simulated plans will tell us if it is a statistical outlier. Percentiles near extremes of 0% or 100%, also understood as further from 50%, are statistical outliers.</p>
+            </div>
+            <!-- <div class="background-text">
+                <p class=step>The graph below plots the percentile of each state's 2020 map for the metrics mentioned earlier.</p>
+            </div> -->
+        </article>
+    </section>
+
+    <section id="graph-1">
+        <div class="button">
+            X axis:&nbsp;   <!-- '&nspb;' adds a space in an HTML line. -->
+            <select id="x-axis" onchange='drawScatterPlot();'>
+                <option value='Expected Democratic Seats'>Expected Democratic Seats</option>
+                <option value='Partisan Symmetry'>Partisan Symmetry</option>
+                <option value='Efficiency Gap'>Efficiency Gap</option>
+                <option value='Polsby Popper'>Polsby Popper</option>
+                <option value='County Split'>County Splits</option>
+            </select>
+            <br>
+            <br>
+            Y axis:&nbsp;
+            <select id="y-axis" onchange='drawScatterPlot();'>
+                <option value='Expected Democratic Seats'>Expected Democratic Seats</option>
+                <option value='Partisan Symmetry'>Partisan Symmetry</option>
+                <option value='Efficiency Gap'>Efficiency Gap</option>
+                <option value='Polsby Popper'>Polsby Popper</option>
+                <option value='County Splits'>County Splits</option>
+            </select>
+            <br>
+            <br>
+            <p>Change the x and y axes to display a metric of your choice. The scatter plot will then show the percentiles of <span style="color: #5b852a; font-weight: 600;">states that do not use an IRC</span> and <span style="color: #28386C; font-weight: 600;">states that use an IRC</span> for your chosen metrics.</p>
+            <p class="subtitle" style="color:#5b852a; font-size: 20px; line-height: 1.2; font-style: italic; text-align: left;">Two pairs to explore are the partisan metrics &#40;Partisan Symmetry and Efficiency Gap&#41; and the geographic metrics &#40;Polsby Popper and County Splits&#41;.</p>
+        </div>
+        <div class="graph">
+            <svg id="scatter"></svg>
+        </div>
+        <div id="tooltip"></div>
+    </section>
+
+    <section id="background">
+        <article class="background">
+            <div class="background-text">
+                <p class="step">For Expected Democratic Seats, the average percentile difference from 50% for all the states with an IRC is 7.66%, whereas the average percentile difference for the states without an IRC (non-IRCs) is 11.38%. With a lower percentile difference, <span style="color: #8888ab; font-weight: 700;">it seems IRCs are less likely to create plans that are outliers &#40;further from 50%&#41; in the number of Democratic seats they yield</span> compared to 5,000 objectively simulated plans.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">For Partisan Symmetry, the average percentile difference for IRCs is 16.48% and for non-IRCs is 9.03%. For the other partisan metric, Efficiency Gap, IRCs' average percentile difference is 10.03%, while non-IRCs' is 22.13%. <span style="color: #8888ab; font-weight: 700;">It seems that non-IRCs are less likely to produce a statistical outlier for partisan symmetry, but IRCs are less likely to produce an outlier for efficiency gap</span>. This gives us an inconclusive answer of whether IRCs are better at avoiding partisan gerrymandering.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">For Polsby Popper, the average percentile difference for IRCs is 9.17% and for non-IRCs is 6.37%. For County Splits, the average percentile difference for IRCs is 38.7% and for non-IRCs is 41.9%. Similar to the partisan metrics, the geographic metrics are also split, where <span style="color: #8888ab; font-weight: 700;">non-IRCs seem less likely to produce an outlier for Polsby Popper and IRCs seem less likely to produce an outlier for county splits.</span></p>
+            </div>
+            <div class="background-text">
+                <p class="step">There doesn't seem to be a clear answer from 2020 if IRCs are better than non-IRCs in preventing gerrymandering under the five metrics reviewed. Because of different sample sizes for IRC vs. non-IRC &#40;8 vs. 40&#41;, state requirements for redistricting, and political/geographical variations between state to state, direct comparisons of percentiles could get foggy.</p>
+            </div>
+            <div class="background-text">
+                <p class="step">We can reduce the number of independent variables by directly comparing maps made by a legislature and by an IRC for the same state, with the same state requirements and political/geographical variations. The only differences now will be the entity that made the map and the year it was made for.</p>
+                <p class="subtitle">There is no well-preserved shp.file for Montana's 2010 redistricting map, which is needed for the ALARM Project to create representative samples off of. Thus, we will only be analyzing three out of the four states that moved from state legislatures to IRCs from 2010 to 2020.</p>
             </div>
         </article>
     </section>
+
+    <section id="graph-2">
+        <div class="button">
+            X axis:&nbsp;   <!-- '&nspb;' adds a space in an HTML line. -->
+            <select id="metric" onchange='drawPlot();'>
+                <option value='Expected Democratic Seats'>Expected Democratic Seats</option>
+                <option value='Partisan Symmetry'>Partisan Symmetry</option>
+                <option value='Efficiency Gap'>Efficiency Gap</option>
+                <option value='Polsby Popper'>Polsby Popper</option>
+                <option value='County Split'>County Splits</option>
+            </select>
+            <br>
+            <br>
+            <p>Change the x axis to display a metric of your choice. The graph will then show the change in percentiles for the chosen metric when the states used <span style="color: #5b852a; font-weight: 600;">legislatures to redistrict in 2010</span> and <span style="color: #28386C; font-weight: 600;">IRCs to redistrict in 2020</span>.</p>
+        </div>
+        <div class="graph">
+            <svg id="change"></svg>
+        </div>
+        <div id="changetooltip"></div>
+    </section>
+
+    <!-- - what we found
+    - we cannot completely extrapolate bc of reasons
+    - success/failures of IRC. it’s an evolving political idea -->
+
+
+
 
     <!-- JS FILES/LIBRARIES LINKED -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -312,6 +393,7 @@
     <script src="scripts/horizontal-scroll.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/metrics.js"></script>
+    <script src="scripts/plot.js"></script>
 </body>
 
 

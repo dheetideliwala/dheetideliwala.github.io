@@ -33,8 +33,6 @@ a:hover {
 }
 
 #states-all-map {
-    /* width:70vw;
-    height:100vh; */
     width: 100%;
     height: 100%;
 
@@ -152,14 +150,10 @@ article.background {
 /*  DISTRICTING */
 #districting-1 {
     position: relative;
-    /* display: -webkit-box;
-    display: -ms-flexbox; */
     display: flex;
 }
 
 #districting-1>* {
-    /* -webkit-box-flex: 1;
-    -ms-flex: 1; */
     flex: 1;
 
     margin-bottom: 40px;
@@ -183,6 +177,7 @@ article.districting {
     border: 1px solid #28386C;
     border-style:groove; 
 }
+
 .precinct {
     stroke: black;
     stroke-width: .5px;
@@ -230,20 +225,12 @@ p.subtitle {
     font-style: italic;
 }
 
-/* .sub-active {
-    opacity: 1 !important;
-} */
-
 #districting-2 {
     position: relative;
-    /* display: -webkit-box;
-    display: -ms-flexbox; */
     display: flex;
 }
 
 #districting-2>* {
-    /* -webkit-box-flex: 1;
-    -ms-flex: 1; */
     flex: 1;
 
     margin-bottom: 40px;
@@ -268,14 +255,10 @@ p.subtitle {
 
 #districting-3 {
     position: relative;
-    /* display: -webkit-box;
-    display: -ms-flexbox; */
     display: flex;
 }
 
 #districting-3>* {
-    /* -webkit-box-flex: 1;
-    -ms-flex: 1; */
     flex: 1;
 
     margin-bottom: 40px;
@@ -291,24 +274,6 @@ p.subtitle {
     transform: translate3d(0, 0, 0);
     z-index: 0;
 }
-
-/*
-.districting-images {
-    flex: 4;
-    
-    border: 1px solid #8888ab;
-    border-style:groove; 
-    
-    margin-left: -1px;
-    
-    background-image: linear-gradient(#28386c, #8888ab, white);
-}
-
-h4.subtitle {
-    font-family: 'Gerry', serif;
-    color: #8888ab;
-}
- */
 
  /* METRICS */
  .description {
@@ -362,7 +327,6 @@ h4.subtitle {
     /* justify-content: space-between; */
     /* centered vertically */
     align-items: center;
-    /* padding: 0 5vw; */
 }
 
 .metric {
@@ -379,39 +343,24 @@ h4.subtitle {
 #AL_districts {
     width: 92%;
     margin-left: 2%;
-    /* width: 90%;
-    margin-bottom: 10%;
-    margin-left: 5%;
-    margin-right: 10%; */
 }
 
 #PA_districts {
     width: 92%;
     margin-left: 2%;
-    /* width: 93%;
-    margin-left: 1%; */
-    /* width: 90%;
-    margin-bottom: 10%;
-    margin-left: 5%;
-    margin-right: 10%; */
 }
 
 p.definition {
-    margin-bottom: 30px;
+    margin-bottom:30px;
     color:#5b852a;
     font-style: italic;
     font-size: 16pt;
 }
 
-
 /* UNHCR */
-svg {
-    width: 100%;
-    height: 100%;
-}
 text {
     font-family: 'Raleway';
-    font-size: 10px;
+    font-size: 8px;
     fill: black;
     font-weight: 300;
 }
@@ -428,12 +377,55 @@ text.chart-label {
     font-weight: 500;
     fill: black;
 }
-/* .tooltip {
+
+/* GRAPHS */
+#graph-1 {
+    display: flex;
+}
+
+#graph-2 {
+    display: flex;
+}
+
+.button {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-family: 'Raleway';
+    flex: 2;
+    font-size: 17pt;
+}
+
+.graph {
+    flex: 5;
+}
+
+#scatter {
+    width: 100%;
+    height: 80vh;
+    /* border:1px solid gray; */
+}
+
+#change {
+    width: 100%;
+    height: 80vh;
+}
+
+#scatter text {
+    font-family: 'Raleway';
+    font-size: 17pt;
+}
+
+#change text {
+    font-family: 'Raleway';
+    font-size: 17pt;
+}
+
+.tooltip {
     background-color: #ffffff;
     font-family: 'Raleway';
-    font-size: 11px;
-    padding: 4px;
-    color: #666666;
-    border: none;
+    font-size: 30px;
+    padding: 8px;
+    color: #000000;
+    border: 1px solid #28386C;
     box-shadow: 0px 0px 3px 0px #E6E6E6;
-} */
+  }
