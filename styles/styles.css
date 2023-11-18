@@ -19,6 +19,20 @@ a:hover {
     text-decoration: underline;
 }
 
+.finale {
+    color: black;
+    height: fit-content;
+
+    text-align: center;
+
+    font-size: 30px;
+    line-height: 50px;
+    font-family: 'Raleway';
+    font-weight:100;
+
+    padding: 20px 10px;
+}
+
 /* TITLE */
 .title {
     display: flex;
