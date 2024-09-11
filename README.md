@@ -5,20 +5,20 @@ Check out my interactive scrollytelling webpage outlining the backstory, researc
 
 Access my Thesis Defense presentation here: [Barrett Thesis Repository](https://keep.lib.asu.edu/items/190295)
 
-### Project Description
-After every decade's census, the process of redistricting takes place-- ensuring that the House of Representatives maintains its proportional nature. With this political responsibility granted to states, partisan desires can corrupt redistricting processes, leading to gerrymandering. Gerrymandering is the practice of redistricting with the intent to disadvantage opposing political parties or advantage one's own political party. With the recent incorporation of Independent Redistricting Commissions in select states, made up of individuals currently not holding office, the question arose of whether degree of separation from government positions led IRCs to produce "fairer" maps.
+## Project Description
+After every decade's census, the process of redistricting takes place-- ensuring that the House of Representatives maintains its proportional nature. With this political responsibility granted to states, partisan desires can corrupt redistricting processes, leading to gerrymandering. Gerrymandering is the practice of redistricting with the intent to disadvantage opposing political parties or advantage one's own political party. With the recent incorporation of Independent Redistricting Commissions (IRCs) in select states, made up of individuals currently not holding office, the question arose of whether degree of separation from government positions led IRCs to produce "fairer" maps. Using The ALARM Project's Markov Chain Monte Carlo algorithms to create simulated redistricted maps, we can compare those simulations to enacted maps from state legislatures and IRCs across the nation, and evaluate the "fairness" from politicians or IRCs.
 
-I relied on The ALARM Project's Markov Chain Monte Carlo algorithms to create simulated redistricted maps and compared those simulations to enacted maps from state legislatures and IRCs across the nation.
-
-### Built with
+## Built with
 **R**
 - [Harvard's ALARM Project](https://github.com/alarm-redist/fifty-states) provided access to [public demographic data and election data from the Voting and Election Science Team](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E) and R scripts using those datasets to create thousands of realistic simulations of maps
+
 **HTML/CSS**
 - *Libraries:* Bootstrap
+
 **Javascript**
 - *Libraries:* scrollama, D3.js, jQuery
 
-### What I learnt
+## What I learnt
 Through this project, I built upon my experience of interactive front-end webpage development and the capabilities of D3.js. 
 
 I worked for the first time with geographic .shp files to create the title graphic and svgs.
