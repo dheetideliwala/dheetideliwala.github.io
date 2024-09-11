@@ -28,5 +28,3 @@ It was also my first time relying on open-source code. The learning curve of rev
 Within D3.js, I implemented interactive features for the user to greater connect with the story. Additionally, scrollama.js allowed me to provide the user with an enhanced reading experience.
 
 I implemented dynamic CSS styling to the webpage after my thesis defense, as it was hard-coded to the dimensions of my Macbook Pro.
-
-
