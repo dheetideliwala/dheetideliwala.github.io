@@ -9,14 +9,12 @@
 a:link {
     color: #8888ab;
 }
-
-a:visited {
+a:visited { 
     color:#D39F29;
 }
-
 a:hover {
-    color: #d3a029;
-    text-decoration: underline;
+    color: #D39F29 !important;
+    /* text-decoration: underline; bc redundant*/
 }
 
 .finale {
@@ -35,43 +33,39 @@ a:hover {
 
 /* TITLE */
 .title {
-    display: flex;
     width: 100vw;
     height: 100vh;
-
-    opacity : 1;
-}
-
-.title-map {
-    flex: 69;
+    position: relative;
 }
 
 #states-all-map {
     width: 100%;
     height: 100%;
-
     margin-left: 3px;
+    margin-right: 40px;
+    /* padding-right: 40px; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 
 }
-
 .state {
     stroke: rgba(128, 128, 128);
     stroke-width: 1;
     fill: white;
 }
-
 .selectedstate {
     stroke:black;
     stroke-width:3;
-    fill:#5b852a
+    fill:#5b852a;
 }
-
 .highlighted  {
-    fill: #D39F29;
+    fill: #D39F29 !important;
     stroke: black;
     stroke-width: 2;
 }
-
 .auto {
     fill:#5b852a;
     stroke: black;
@@ -79,37 +73,36 @@ a:hover {
 }
 
 .title-text {
+    position: absolute;
+    top: 50%;
+    right:0%;
+    transform: translateY(-50%);
+    z-index: 10;
+
     text-align: right;
-
-    flex: 31;
-
-    padding-right: 40px;
-
-    z-index: 1;
+    background: rgb(255, 255, 255, .8);
+    box-shadow: 0 0 5px 5px rgb(255 255 255 / .4);
+    
+    padding: 2vh;
 
 }
-
 h1.headline {
     font-family: Raleway;
-    font-size: 47pt;
+    font-size: calc(100% + 2.7vw);
     font-weight: 600;
     color: #28386C;
     line-height: 1.1;
     
-    padding-top: 200px;
-
-    margin-bottom: 15px;
+    margin-bottom: 1vh;
 }
-
 h3.Gerry {
     font-family: 'Gerry', serif;
-    font-size: 29pt;
+    font-size: calc(100% + 1.4vw);
     color: #D39F29;
 }
-
 h6.subtitle {
     font-family: Raleway;
-    font-size: 22pt;
+    font-size: calc(100% + .9vw);
     font-weight: 500;
     color: gray;
  }
@@ -165,24 +158,25 @@ article.background {
 #districting-1 {
     position: relative;
     display: flex;
-}
-
-#districting-1>* {
-    flex: 1;
-
     margin-bottom: 40px;
 }
 
+/* #districting-1>* {
+    flex: 1;
+
+    margin-bottom: 40px;
+} */
+
 article.districting {
     position: relative;
-    max-width: 45%;
+    max-width: 75%;
 }
 
 #maricopa {
     position: -webkit-sticky;
     position: sticky;
     width: 100%;
-    padding: 1px;
+    padding: 3px;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);

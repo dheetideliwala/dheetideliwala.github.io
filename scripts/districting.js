@@ -1,6 +1,6 @@
 var maricopaSvg = d3.select('#maricopa');
 var maricopaSvgWidth = maricopaSvg.node().clientWidth;
-var maricopaSvgHeight = maricopaSvg.node().clientHeight;
+var maricopaSvgHeight = maricopaSvg.node().clientHeight-6;
 // console.log(maricopaSvgWidth, maricopaSvgHeight)
 
 var maricopaSvgData;
@@ -11,7 +11,7 @@ Promise.all([d3.json('data/MaricopaCounty_VotingPrecincts.geojson')])
         maricopaSvgData = data[0];
 
         maricopaProjection = d3.geoMercator()    
-                        .fitSize([maricopaSvgWidth, maricopaSvgHeight-4], maricopaSvgData)
+                        .fitSize([maricopaSvgWidth, maricopaSvgHeight], maricopaSvgData)
         
         const geoPath = d3.geoPath().projection(maricopaProjection);
         
