@@ -106,6 +106,7 @@ var d2_scrolly = body.select("#districting-2");
 var algo = d2_scrolly.select("#algorithm");
 var d2_districting = d2_scrolly.select("article");
 var d2_districting_text = d2_districting.selectAll(".districting-text");
+var d2_image = d2_districting.selectAll("figure")
 
 // initialize the scrollama
 var d2_scroller = scrollama();
@@ -113,10 +114,9 @@ var d2_scroller = scrollama();
 // generic window resize listener event
 function d2_handleResize() {
     // 1. update height of step elements
-    var stepH = Math.floor(window.innerHeight * 0.60);
+    var stepH = Math.floor(window.innerHeight * 0.5);
     d2_districting_text.style("height", stepH + "px");
 
-    // var algoHeight = window.innerHeight / 2;
     var algoHeight = stepH;
     var algoMarginTop = (window.innerHeight - algoHeight) / 2;
 
@@ -150,6 +150,8 @@ function d2_handleStepEnter(response) {
     let images = ['images/AZ_Shortest.png', 'images/AZ_Olson.png', 'images/AL_Voronoi.png']
     image.src = images[response.index];
 
+    algo.classed("is-active", true)
+
     // update graphic based on step
     // figure.select("p").text(response.index + 1);
 }
@@ -158,12 +160,8 @@ function d2_handleStepExit(response) {
     // console.log("exited ", response.index)
     if(response.index == j) {
         d2_districting_text.classed("is-active", false)
+        algo.classed("is-active", false)
     }
-    // d2_districting_text.classed("is-active", function(d, i) {
-    //     if(i == response.index) {
-    //         return false;
-    //     }
-    // })
 }
 
 function d2_init() {

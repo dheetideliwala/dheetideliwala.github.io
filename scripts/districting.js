@@ -1,6 +1,7 @@
 var maricopaSvg = d3.select('#maricopa');
 var maricopaSvgWidth = maricopaSvg.node().clientWidth;
-var maricopaSvgHeight = maricopaSvg.node().clientHeight-6;
+var maricopaSvgHeight = maricopaSvg.node().clientHeight;
+var preserveAspectRatio="xMidYMin"
 // console.log(maricopaSvgWidth, maricopaSvgHeight)
 
 var maricopaSvgData;

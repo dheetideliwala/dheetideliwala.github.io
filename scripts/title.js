@@ -1,6 +1,6 @@
 // SVG variables
 var usaSvg = d3.select('#states-all-map')
-var usaSvgWidth = usaSvg.node().clientWidth * .69;
+var usaSvgWidth = usaSvg.node().clientWidth * .68;
 var usaSvgHeight = usaSvg.node().clientHeight;
 
 var usaMapData;
@@ -93,12 +93,12 @@ function drawMap() {
 drawMap();
 
 // attempt at responsive map building with window resize
-// function reportWindowSize() {
-//     usaSvgWidth = window.innerWidth * .69;
-//     usaSvgHeight = window.innerHeight;
-//     // console.log(usaSvgWidth, usaSvgHeight)
-//     usaSvg.selectAll("*").remove();
-//     drawMap();
-// }
+function reportWindowSize() {
+    usaSvgWidth = window.innerWidth * .69;
+    usaSvgHeight = window.innerHeight;
+    // console.log(usaSvgWidth, usaSvgHeight)
+    usaSvg.selectAll("*").remove();
+    drawMap();
+}
 
-// window.onresize = reportWindowSize;
+window.onresize = reportWindowSize;

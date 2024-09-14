@@ -2,11 +2,11 @@ const scatterSvg = d3.select('#scatter')
 .attr("viewBox", "-60 5 50 750")
 .attr("preserveAspectRatio", "xMinYMin")
 
-const scatterWidth = scatterSvg.style('width').replace('px','');
-const scatterHeight = scatterSvg.style('height').replace('px','');
-const scatterMargin = { top: 30, bottom: 30, right: 0, left: 0};
-const innerWidth = scatterWidth - scatterMargin.left - scatterMargin.right;
-const innerHeight = scatterHeight - scatterMargin.top - scatterMargin.bottom;
+var scatterWidth = scatterSvg.style('width').replace('px','');
+var scatterHeight = scatterSvg.style('height').replace('px','');
+var scatterMargin = { top: 30, bottom: 30, right: 0, left: 0};
+var innerWidth = scatterWidth - scatterMargin.left - scatterMargin.right;
+var innerHeight = scatterHeight - scatterMargin.top - scatterMargin.bottom;
 let scatterData;
 
 var xAttrib, xValue, xNum;
@@ -202,7 +202,7 @@ function drawScatterPlot() {
     g.append('text')
         .attr('x',innerWidth/2)
         .attr('y',innerHeight+75)
-        .style('font-size', '22pt')
+        .style('font-size', 'clamp(1rem, 2.5vw, 3rem);')
         .attr('text-anchor','middle')
         .text(xTitle);
     g.append('text')
@@ -210,7 +210,7 @@ function drawScatterPlot() {
         .attr('y','-65px')
         .attr('x',-innerHeight/2)
         .attr('text-anchor','middle')
-        .style('font-size', '22pt')
+        .style('font-size', 'clamp(1rem, 2.5vw, 3rem);')
         .text(yTitle)
 }
 
@@ -230,6 +230,16 @@ d3.csv('data/2020_scatter.csv').then(data => {
     // console.log(scatterData)
     drawScatterPlot();  // call the function that draws the scatter plot
 });
+
+function reportWindowSize() {
+    innerWidth = window.innerWidth;
+    innerHeight = window.innerHeight;
+    scatterSvg.selectAll("*").remove();
+    console.log("changing", window.innerWidth, window.innerHeight)
+    drawScatterPlot();
+}
+
+window.onresize = reportWindowSize;
 
 const changeSvg = d3.select('#change')
 .attr("viewBox", "-60 5 50 750")
@@ -510,7 +520,7 @@ function drawPlot() {
     g.append('text')
         .attr('x',innerWidth/2)
         .attr('y',innerHeight+75)
-        .style('font-size', '22pt')
+        .style('font-size', 'clamp(1rem, 2.5vw, 3rem);')
         .attr('text-anchor','middle')
         .text(xMetric);
 }
