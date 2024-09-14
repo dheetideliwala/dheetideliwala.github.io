@@ -1,6 +1,6 @@
 // SVG variables
 var usaSvg = d3.select('#states-all-map')
-var usaSvgWidth = usaSvg.node().clientWidth * .69;
+var usaSvgWidth = usaSvg.node().clientWidth * .68;
 var usaSvgHeight = usaSvg.node().clientHeight;
 
 var usaMapData;

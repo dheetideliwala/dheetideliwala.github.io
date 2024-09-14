@@ -43,7 +43,6 @@ a:hover {
     height: 100%;
     margin-left: 3px;
     margin-right: 40px;
-    /* padding-right: 40px; */
 
     position: absolute;
     top: 0;
@@ -112,42 +111,36 @@ h6.subtitle {
 #background {
     position: relative;
 }
-
 article.background {
     position: relative;
     padding: 0 25px;
     margin: 0 auto;
     width: 67%;
 }
-
 .background-text {
     color: black;
     height: fit-content;
     opacity: .3;
 
-    font-size: 30px;
+    font-size: clamp(1.5rem, 2vw, 3rem);
     line-height: 50px;
     font-family: Raleway;
     font-weight:100;
+    text-align: left;
 
     padding: 20px 10px;
-
-    text-align: left;
 }
-
 .background-text.is-active {
     color: black;
     opacity: 1;
     transition: .5s;
 }
-
 .step {
     border-left: 10px solid;
     border-left-color:white;
 
     padding: 10px;
 }
-
 .bullet-point {
     border-left: 10px solid !important;
     border-left-color: #d3a029 !important;
@@ -160,43 +153,36 @@ article.background {
     display: flex;
     margin-bottom: 40px;
 }
-
-/* #districting-1>* {
-    flex: 1;
-
-    margin-bottom: 40px;
-} */
-
 article.districting {
     position: relative;
-    max-width: 75%;
+    flex: 3.8;
 }
-
-#maricopa {
-    position: -webkit-sticky;
-    position: sticky;
-    width: 100%;
-    padding: 3px;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    z-index: 0;
-
+.maricopa-svg {
     border: 1px solid #28386C;
     border-style:groove; 
-}
 
+    display: grid;
+    place-items: center;
+
+    position: relative;
+    flex: 2;
+}
+#maricopa {
+    position: relative;
+    
+    width: 97%;
+    height: 97%;
+}
 .precinct {
     stroke: black;
     stroke-width: .5px;
     fill: #8888ab30;
 }
-
 .districting-text {
     color: black;
     opacity: .3;
 
-    font-size: 27px;
+    font-size: clamp(1.5rem, 2vw, 3rem);
     font-family: Raleway;
     line-height: 1.8;
 
@@ -208,11 +194,9 @@ article.districting {
     border-left-color: white;
     
 }
-
 .districting-text:last-child {
     margin-bottom: 0;
 }
-
 .districting-text.is-active {
     opacity: 1;
     transition: .5s;
@@ -220,73 +204,70 @@ article.districting {
     border-left: 10px solid !important;
     border-left-color: #d3a029 !important;
 }
-
 p.subtitle {
     color:#5b852a;
     text-align: right;
 
     padding-right: 40px;
 
-    font-size: 20px;
+    font-size: clamp(.8rem, 1.4vw, 2rem);
     line-height: 1;
 
     font-style: italic;
 }
-
 #districting-2 {
     position: relative;
     display: flex;
 }
-
 #districting-2>* {
     flex: 1;
 
     margin-bottom: 40px;
 }
-
 .figure {
     border: 1px solid #28386C;
     border-style:groove; 
 }
-
 #algorithm {
-    position: -webkit-sticky;
     position: sticky;
     width: 100%;
+
     margin: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
     z-index: 0;
     object-fit: contain;
+
+    opacity: .3;
+}
+#algorithm.is-active{
+    opacity: 1 !important;
+    transition: .3s;
 }
 
 #districting-3 {
     position: relative;
     display: flex;
 }
-
 #districting-3>* {
     flex: 1;
 
     margin-bottom: 40px;
 }
-
 #political {
     position: -webkit-sticky;
     position: sticky;
-    width: 100%;
-    padding: 1px;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+
+
+
+
+
     z-index: 0;
 }
+
 
  /* METRICS */
  .description {
     font-family: Raleway;
-    font-size: 21pt;
+    font-size: clamp(1rem, 1.8vw, 2.5rem);
 
     padding-left: 40px;
 
@@ -294,12 +275,10 @@ p.subtitle {
     
     flex: 2;
  }
-
  .graphs {
     flex: 3;
     height: 100vh;
  }
-
  .metric h2 {
     font-family: "Raleway";
     font-size: 50px;
@@ -312,18 +291,15 @@ p.subtitle {
 
     text-align: center;
  }
-
 .sticky-parent {
     height: 700vh;
 }
-
 .sticky {
     overflow: hidden;
     position: sticky;
     top: 0;
     height: 100vh;
 }
-
 .scroll-section {
     position: absolute;
     top: 0;
@@ -331,12 +307,8 @@ p.subtitle {
     width: 700vw;
     will-change: transform;
     display: flex;
-    /* spaces images out evently */
-    /* justify-content: space-between; */
-    /* centered vertically */
     align-items: center;
 }
-
 .metric {
     width: 100vw;
     height: 100vh;
@@ -345,30 +317,27 @@ p.subtitle {
     border-bottom: 2px solid #28386C;
     padding: 10px;
 }
-
 .content {display: flex;}
-
 #AL_districts {
     width: 92%;
     margin-left: 2%;
 }
-
 #PA_districts {
     width: 92%;
     margin-left: 2%;
 }
-
 p.definition {
     margin-bottom:30px;
     color:#5b852a;
     font-style: italic;
-    font-size: 16pt;
+    font-size: clamp(.8rem, 1.4vw, 2rem);
 }
 
-/* UNHCR */
+
+/* SCROLL GRAPHS */
 text {
     font-family: 'Raleway';
-    font-size: 8px;
+    /* font-size: 8px; */
     fill: black;
     font-weight: 300;
 }
@@ -386,52 +355,45 @@ text.chart-label {
     fill: black;
 }
 
+
 /* GRAPHS */
 #graph-1 {
     display: flex;
 }
-
 #graph-2 {
     display: flex;
 }
-
 .button {
     margin-top: 50px;
     margin-left: 50px;
     font-family: 'Raleway';
     flex: 2;
-    font-size: 17pt;
+    font-size: clamp(1rem, 1.5vw, 2rem);
 }
-
 .graph {
     flex: 5;
 }
-
 #scatter {
     width: 100%;
     height: 80vh;
     /* border:1px solid gray; */
 }
-
 #change {
     width: 100%;
     height: 80vh;
 }
-
 #scatter text {
     font-family: 'Raleway';
-    font-size: 17pt;
+    font-size: clamp(1rem, 2vw, 3rem);
 }
-
 #change text {
     font-family: 'Raleway';
     font-size: 17pt;
 }
-
 .tooltip {
     background-color: #ffffff;
     font-family: 'Raleway';
-    font-size: 30px;
+    font-size: clamp(.8rem, 1.4vw, 2rem);
     padding: 8px;
     color: #000000;
     border: 1px solid #28386C;

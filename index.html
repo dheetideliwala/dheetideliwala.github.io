@@ -37,7 +37,6 @@
 
 <body>
 
-    <!-- need to add breadcrumb at the top since there isn't much difference between the sections -->
 
     <section id="title">
         <div class="title">
@@ -50,10 +49,12 @@
         </div>
     </section>
 
+    <!-- need to add breadcrumb at the top since there isn't much difference between the sections -->
+
     <section id="background"> 
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">E</span>very 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">E</span>very 10 years, a nationwide census takes place to count every resident in the United States. This helps lawmakers understand the population growth (or decline) across the nation's 50 states.</p>
             </div>
             <div class="background-text">
                 <p class="step">With each decade's population change, the number of representatives granted to each state is adjusted in order to preserve the proportional nature of the U.S. House of Representatives. This process of reassigning the number of representatives is called <span style="color:#8888ab; font-weight: 700;">reapportionment</span>.</p>
@@ -71,15 +72,16 @@
     <section id="districting-1">
         <article class="districting">
             <div class="districting-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 30pt;">T</span>he U.S. Census breaks states into much smaller sections called <span style="color:#8888ab; font-weight: 700;">voting precincts</span>. Voting precincts are the building blocks that are used to make up congressional districts.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">T</span>he U.S. Census breaks states into much smaller sections called <span style="color:#8888ab; font-weight: 700;">voting precincts</span>. Voting precincts are the building blocks that are used to make up congressional districts.</p>
                 <p class="subtitle">The map on the right shows the voting precincts in Maricopa County. By zooming in, you might be able to tell what cluster of precincts represent the city of Phoenix.</p>
             </div>
             <div class="districting-text">
                 <p class="step">With thousands of precincts in each state, the number of maps that can be drawn are endless.</p>
             </div> 
         </article>
-
-        <svg id="maricopa"></svg>
+        <div class="maricopa-svg">
+            <svg id="maricopa"></svg>
+        </div>
     </section>
 
     <section id="background">
@@ -99,15 +101,15 @@
     <section id="districting-2">
         <article class="districting">
             <div class="districting-text">
-                <p class="step" style="font-size: 30px;">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> creates simply shaped districts. This algorithm splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
+                <p class="step">The <span style="color:#8888ab; font-weight: 700;">Shortest Splitline Method</span><!--, created by Warren D. Smith at the Center for Range Voting,--> creates simply shaped districts. This algorithm splits the state's population in half using the shortest splitting line. The resulting hemi-states will be further split in half until the desired number of districts is created.</p>
                 <p class="subtitle">Created by Warren D. Smith</br>at <a href="https://rangevoting.org/GerryExec.html">The Center for Range Voting</a></p>
             </div>
             <div class="districting-text">
-                <p class="step" style="font-size: 30px;"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> creates optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
+                <p class="step"><span style="color:#8888ab; font-weight: 700;">Olson's algorithm</span><!--, created by Brian Olson,--> creates optimally compact districts. It calculates how compact a district is by calculating the distance from the center to the furthest point in the district. The algorithm's goal is to have the smallest average distance to center over all districts in a state.</p>
                 <p class="subtitle">Created by Brian Olson at <a href="https://bdistricting.org/2020/">BDistricting</a></p>
             </div>
             <div class="districting-text" >
-                <p class="step" style="font-size: 30px;">Like Olson's algorithm, the <span style="color:#8888ab; font-weight: 700;">Voronoi algorithm</span><!--, created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young,--> seeks to create optimally compact districts. However, the Voronoi algorithm uses the sum of squared distances between residents and the center to measure compactness.</p>
+                <p class="step">Like Olson's algorithm, the <span style="color:#8888ab; font-weight: 700;">Voronoi algorithm</span><!--, created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young,--> seeks to create optimally compact districts. However, the Voronoi algorithm uses the sum of squared distances between residents and the center to measure compactness.</p>
                 <p class="subtitle">Created by Vincent Cohen-Addad, Philip N. Klein, and Neal E. Young at <a href="http://district.cs.brown.edu/">Brown University</a></p>
             </div>
         </article>
@@ -158,7 +160,7 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing Census, election, and geographic data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35;">U</span>sing Census, election, and geographic data, metrics about each map can be calculated. These metrics explain geographical and political features about a map, like how many counties are split or how many Democratic seats a map yields.</p>
             </div>
             <div class="background-text">
                 <p class="step">Compounding the values of one metric calculated from thousands of maps that follow constitutional guidelines, we can plot a histogram. With all the maps plotted, we can then compare where one specific map lies in relation to the rest, the average, and the median.</p>
@@ -172,7 +174,6 @@
 
     <div class="sticky-parent"> 
         <div class="sticky"> 
-            <!-- i think i should make it just vertical with scroll-snap-type -->
             <div class="scroll-section"> 
                 <div class="metric">
                     <h2>Expected Number of Democratic Seats</h2>
@@ -189,7 +190,7 @@
                     <div class="content">
                         <div class="description">
                             <p class="definition"><span style="font-weight: 700;">What are election results by districts?</span><br>We can also use those simulated elections to compare the enacted plan to the simulated plans at the district level. Using the Democratic vote percentage, we can mark the most Republican to most Democratic district in each plan.</p>
-                            <p style="font-size: 20pt !important;">In Pennsylvannia, we note District 8 and 9, or the 8th and 9th most Republican district, in each plan. The majority of simulated plans have these districts yielding Republican seats, while the enacted plan's districts results in Democratic seats. <span style="font-weight: 600; color:#d3a029;">This shows the enacted plan created two more majority-Democratic seats than the vast majority of simulated plans</span>, giving the Democratic Party an advantage.</p>                        
+                            <p>In Pennsylvannia, we note District 8 and 9, or the 8th and 9th most Republican district, in each plan. The majority of simulated plans have these districts yielding Republican seats, while the enacted plan's districts results in Democratic seats. <span style="font-weight: 600; color:#d3a029;">This shows the enacted plan created two more majority-Democratic seats than the vast majority of simulated plans</span>, giving the Democratic Party an advantage.</p>                        
                         </div>
                         <div class="graphs" id="PA_districts">
                             <img id="PA_districts" src="images/PA_cd_2020_districts.png" alt="">
@@ -201,7 +202,7 @@
                     <div class="content">
                         <div class="description">
                             <p class="definition"><span style="font-weight: 700;">What is packing?</span><br><a href="https://www.brennancenter.org/our-work/research-reports/gerrymandering-explained">Packing</a> is technique of redistricting that dilutes a political party's voting power by cramming voters of that party in as few districts as possible. This dilutes the party's voting power in all other districts.</p>
-                            <p style="font-size: 20pt;">In Alabama, the most Democratic district in the enacted plan, labeled District 7, has a Democratic vote margin more than 20 points above the average for the most democratic districts in all simulated plans. <span style="font-weight: 600; color:#d3a029;">The higher margin in the enacted plan is caused by packing Democrats into one district</span>, making that district significantly more Democratic and the remainder of districts significantly more Republican than their comparitive districts in all simulated plans.</p>
+                            <p">In Alabama, the most Democratic district in the enacted plan, labeled District 7, has a Democratic vote margin more than 20 points above the average for the most democratic districts in all simulated plans. <span style="font-weight: 600; color:#d3a029;">The higher margin in the enacted plan is caused by packing Democrats into one district</span>, making that district significantly more Democratic and the remainder of districts significantly more Republican than their comparitive districts in all simulated plans.</p>
                         </div>
                         <div class="graphs">
                             <img id="AL_districts" src="images/AL_cd_2020_districts.png" alt="">
@@ -222,7 +223,7 @@
                     <h2>Efficiency Gap</h2>
                     <div class="content">
                         <div class="description">
-                            <p class="definition"><span style="font-weight: 700;">What is efficiency gap?</span><br>The <a href="https://planscore.org/metrics/efficiencygap/">Efficiency Gap</a> compares the number of wasted votes between the Republican and Democratic Party. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated from subtracting the number of lost Democratic votes from lost Republican votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
+                            <p class="definition"><span style="font-weight: 700;">What is efficiency gap?</span><br>The <a href="https://planscore.org/metrics/efficiencygap/">Efficiency Gap</a> compares the number of wasted votes between political parties. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated by subtracting the number of wasted Republican votes from wasted Democratic votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
                             <p style="font-size:19.5pt !important;">In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
                         </div>
                         <div class="graphs" id="FL_egap"></div>
@@ -264,7 +265,7 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">W</span>ritten in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.<span style="vertical-align: super; font-size: 20pt"><a href="https://constitution.congress.gov/browse/article-1/section-4/#:~:text=Clause%201%20Elections%20Clause,the%20Places%20of%20chusing%20Senators.">2</a></span></p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">W</span>ritten in Article 1 Section 4 of the U.S. Constitution, state legislatures have the responsibility to redistrict their states every ten years after the Census.<span style="vertical-align: super; font-size: 20pt"><a href="https://constitution.congress.gov/browse/article-1/section-4/#:~:text=Clause%201%20Elections%20Clause,the%20Places%20of%20chusing%20Senators.">2</a></span></p>
             </div>
             <div class="background-text">
                 <p class="step">Naturally, those in power have an incentive to stay in power. By giving state legislators the responsibility to draw the exact districts they are elected from, those in power are able to select the exact voters they want, usually matching their own political party. This has inevitably led to an unfair redistricting practice called <span style="color:#8888ab; font-weight: 700;">gerrymandering</span>.</p>
@@ -287,14 +288,11 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">U</span>sing the metrics from above, we can compare how state plans created by IRCs compare to state plans created by state legislatures. Specifically, <span style="color: #8888ab; font-weight: 700;">we are looking to see if IRCs are less likely to produce maps that are statistical outliers when compared to 5,000 simulated plans</span>.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">U</span>sing the metrics from above, we can compare how districting plans created by IRCs compare to districting plans created by state legislatures. Specifically, <span style="color: #8888ab; font-weight: 700;">we are looking to see if IRCs are less likely to produce maps that are statistical outliers when compared to 5,000 simulated plans</span>. In other words, whether or not IRCs produce maps that are similar to the large sample of unbiased, simulated maps.</p>
             </div>
             <div class="background-text">
                 <p class="step">The percentile of where an enacted plan falls amongst the 5,000 simulated plans will tell us if it is a statistical outlier. Percentiles near extremes of 0% or 100%, also understood as further from 50%, are statistical outliers.</p>
             </div>
-            <!-- <div class="background-text">
-                <p class=step>The graph below plots the percentile of each state's 2020 map for the metrics mentioned earlier.</p>
-            </div> -->
         </article>
     </section>
 
@@ -321,7 +319,7 @@
             <br>
             <br>
             <p>Change the x and y axes to display a metric of your choice. The scatter plot will then show the percentiles of <span style="color: #5b852a; font-weight: 600;">states that do not use an IRC</span> and <span style="color: #28386C; font-weight: 600;">states that use an IRC</span> for your chosen metrics.</p>
-            <p class="subtitle" style="color:#5b852a; font-size: 20px; line-height: 1.2; font-style: italic; text-align: left;">Two pairs to explore are the partisan metrics &#40;Partisan Symmetry and Efficiency Gap&#41; and the geographic metrics &#40;Polsby Popper and County Splits&#41;.</p>
+            <p class="subtitle" style="color:#5b852a; line-height: 1.2; font-style: italic; text-align: left;">Two pairs to explore are the partisan metrics &#40;Partisan Symmetry and Efficiency Gap&#41; and the geographic metrics &#40;Polsby Popper and County Splits&#41;.</p>
         </div>
         <div class="graph">
             <svg id="scatter"></svg>
@@ -379,7 +377,7 @@
                 <p class="step">This leaves us in the same position as after the first graph: <span style="color: #8888ab; font-weight: 700;">we cannot make a definitive conclusion whether IRCs are less likely to produce statistical outliers.</span></p>
             </div>
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 40pt;">I</span>RCs are a relatively new invention in our democracy, spanning less than half a decade. Additionally, we only have maps from 2010 and 2020 in the form of file needed to perform MCMC, which leads to an extremely small sample size and makes it harder to perform quantitative analysis.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">I</span>RCs are a relatively new invention in our democracy, spanning less than half a decade. Additionally, we only have maps from 2010 and 2020 in the form of file needed to perform MCMC, which leads to an extremely small sample size and makes it harder to perform quantitative analysis.</p>
             </div>
             <div class="background-text">
                 <p class=step>Despite this, we can be sure IRCs have brought plenty of good into the redististricting process.</p>
