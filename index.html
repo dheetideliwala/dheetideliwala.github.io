@@ -224,7 +224,7 @@
                     <div class="content">
                         <div class="description">
                             <p class="definition"><span style="font-weight: 700;">What is efficiency gap?</span><br>The <a href="https://planscore.org/metrics/efficiencygap/">Efficiency Gap</a> compares the number of wasted votes between political parties. In districts where a party wins, any vote past 50% + 1 is a wasted vote. In districts where a party loses, any vote is a wasted vote. The efficiency gap is calculated by subtracting the number of wasted Republican votes from wasted Democratic votes. A positive efficiency gap indicates more Democratic votes are wasted.</p>
-                            <p style="font-size:19.5pt !important;">In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
+                            <p>In Florida, the average efficiency gap of all simulated plans is 0.06, while the efficiency gap of the enacted plan is 0.16. <span style="font-weight: 600; color:#d3a029;">The enacted map has an efficiency gap greater than 100% of all simulated plans</span>, showing that the enacted plan wastes Democratic votes at a much higher rate and gives an advantage to the Republican Party.</p>
                         </div>
                         <div class="graphs" id="FL_egap"></div>
                     </div>
@@ -288,13 +288,15 @@
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">U</span>sing the metrics from above, we can compare how districting plans created by IRCs compare to districting plans created by state legislatures. Specifically, <span style="color: #8888ab; font-weight: 700;">we are looking to see if IRCs are less likely to produce maps that are statistical outliers when compared to 5,000 simulated plans</span>. In other words, whether or not IRCs produce maps that are similar to the large sample of unbiased, simulated maps.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">U</span>sing the metrics from above, we can compare how districting plans created by IRCs compare to districting plans created by state legislatures. Specifically, <span style="color: #8888ab; font-weight: 700;">we are looking to see if IRCs are less likely to produce maps that are statistical outliers when compared to 5,000 simulated plans</span>. In other words, whether IRCs produce maps that yield similar results to the large sample of unbiased, simulated maps.</p>
             </div>
             <div class="background-text">
                 <p class="step">The percentile of where an enacted plan falls amongst the 5,000 simulated plans will tell us if it is a statistical outlier. Percentiles near extremes of 0% or 100%, also understood as further from 50%, are statistical outliers.</p>
             </div>
         </article>
     </section>
+
+    <div id="yellow-barrier"></div>
 
     <section id="graph-1">
         <div class="button">
@@ -327,26 +329,30 @@
         <div id="tooltip"></div>
     </section>
 
+    <div id="yellow-barrier"></div>
+
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">For Expected Democratic Seats, the average percentile difference from 50% for all the states with an IRC is 7.66%, whereas the average percentile difference for the states without an IRC (non-IRCs) is 11.38%. With a lower percentile difference, <span style="color: #8888ab; font-weight: 700;">it seems IRCs are less likely to create plans that are outliers &#40;further from 50%&#41; in the number of Democratic seats they yield</span> compared to 5,000 objectively simulated plans.</p>
+                <p class="step">For Expected Democratic Seats, IRCs produced maps that were on average 7.66 points away from 50%, whereas states without IRCs (non-IRCs) produced maps that were on average 11.38 points from 50%. With a lower percentile difference, <span style="color: #8888ab; font-weight: 700;">it seems IRCs are less likely to create plans that are outliers &#40;further from 50%&#41; in the number of Democratic seats they yield</span> compared to 5,000 objectively simulated plans.</p>
             </div>
             <div class="background-text">
-                <p class="step">For Partisan Symmetry, the average percentile difference for IRCs is 16.48% and for non-IRCs is 9.03%. For the other partisan metric, Efficiency Gap, IRCs' average percentile difference is 10.03%, while non-IRCs' is 22.13%. <span style="color: #8888ab; font-weight: 700;">It seems that non-IRCs are less likely to produce a statistical outlier for partisan symmetry, but IRCs are less likely to produce an outlier for efficiency gap</span>. This gives us an inconclusive answer of whether IRCs are better at avoiding partisan gerrymandering.</p>
+                <p class="step">For Partisan Symmetry, IRCs produced maps that were on average 16.48 points away from 50%, while non-IRCs were 9.03 points away. For the other partisan metric, Efficiency Gap, IRCs were on average 10.03 points away from 50%, while non-IRCs states without were 22.13 points away. <span style="color: #8888ab; font-weight: 700;">It seems that non-IRCs are less likely to produce a statistical outlier for partisan symmetry, but IRCs are less likely to produce an outlier for efficiency gap</span>. This gives us an inconclusive answer of whether IRCs are better at avoiding partisan gerrymandering.</p>
             </div>
             <div class="background-text">
-                <p class="step">For Polsby Popper, the average percentile difference for IRCs is 9.17% and for non-IRCs is 6.37%. For County Splits, the average percentile difference for IRCs is 38.7% and for non-IRCs is 41.9%. Similar to the partisan metrics, the geographic metrics are also split, where <span style="color: #8888ab; font-weight: 700;">non-IRCs seem less likely to produce an outlier for Polsby Popper and IRCs seem less likely to produce an outlier for county splits.</span></p>
+                <p class="step">For Polsby Popper, IRCs were on average 9.17 points away, and non-IRCs were 6.37 points away. For County Splits, IRCs were on average 38.7 points away, while non-IRCs were 41.9 points. Similar to the partisan metrics, the geographic metrics are also split, where <span style="color: #8888ab; font-weight: 700;">non-IRCs seem less likely to produce an outlier for Polsby Popper and IRCs seem less likely to produce an outlier for county splits.</span></p>
             </div>
             <div class="background-text">
                 <p class="step">There doesn't seem to be a clear answer from 2020 if IRCs are better than non-IRCs in preventing gerrymandering under the five metrics reviewed. Because of different sample sizes for IRC vs. non-IRC &#40;8 vs. 40&#41;, state requirements for redistricting, and political/geographical variations between state to state, direct comparisons of percentiles could get foggy.</p>
             </div>
             <div class="background-text">
-                <p class="step">We can reduce the number of independent variables by directly comparing maps made by a legislature and by an IRC for the same state, with the same state requirements and political/geographical variations. The only differences now will be the entity that made the map and the year it was made for.</p>
-                <p class="subtitle">There is no well-preserved shp.file for Montana's 2010 redistricting map, which is needed for the ALARM Project to create representative samples off of. Thus, we will only be analyzing three out of the four states that moved from state legislatures to IRCs from 2010 to 2020.</p>
+                <div class="step">We can reduce the number of independent variables by directly comparing maps made by a legislature and by an IRC for the same state, with the same state requirements and political/geographical variations. The only differences now will be the entity that made the map and the year it was made for.
+                <p class="subtitle">There is no well-preserved shp.file for Montana's 2010 redistricting map, which is needed for the ALARM Project to create representative samples off of. Thus, we will only be analyzing three out of the four states that moved from state legislatures to IRCs from 2010 to 2020.</p></div>
             </div>
         </article>
     </section>
+
+    <div id="yellow-barrier"></div>
 
     <section id="graph-2">
         <div class="button">
@@ -368,19 +374,21 @@
         <div id="changetooltip"></div>
     </section>
 
+    <div id="yellow-barrier"></div>
+
     <section id="background">
         <article class="background">
             <div class="background-text">
-                <p class="step">For three of the metrics, Expected Democratic Seats, Deviation from Partisan Symmetry, and Polsby Popper, IRCs in 2020 created maps that were in percentiles closer to 50% than their non-IRC counterparts in 2010. Non-IRCs did better for the remaining two metrics, Efficiency Gap and County Splits.</p>
+                <p class="step">For three of the metrics, Expected Democratic Seats, Deviation from Partisan Symmetry, and Polsby Popper, IRCs in 2020 created maps that were closer to the 50% percentile than their non-IRC counterparts in 2010. However, non-IRCs maps from 2010 did better for the remaining two metrics, Efficiency Gap and County Splits.</p>
             </div>
             <div class="background-text">
                 <p class="step">This leaves us in the same position as after the first graph: <span style="color: #8888ab; font-weight: 700;">we cannot make a definitive conclusion whether IRCs are less likely to produce statistical outliers.</span></p>
             </div>
             <div class="background-text">
-                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">I</span>RCs are a relatively new invention in our democracy, spanning less than half a decade. Additionally, we only have maps from 2010 and 2020 in the form of file needed to perform MCMC, which leads to an extremely small sample size and makes it harder to perform quantitative analysis.</p>
+                <p class="step"><span style="font-family: 'Gerry', serif; font-size: 35pt;">I</span>RCs are a relatively new invention in our democracy, spanning less than half a decade. Only a handful of states have taken the leap towards implementing IRCs into their redistricting process, leading to an extremely small sample size that is harder to perform meaningful quantitative analysis with.  
             </div>
             <div class="background-text">
-                <p class=step>Despite this, we can be sure IRCs have brought plenty of good into the redististricting process.</p>
+                <p class=step>Despite lack of quantifiable advantages, we can still be sure that IRCs have brought plenty of good into the redististricting process.</p>
             </div>
             <div class="background-text">
                 <p class=step><span style="color: #8888ab; font-weight: 700;">IRCs have made more competitive districts than the national average</span>. In Arizona, the average margin of victory was 28 points lower than the national average, alluding to the creation of less "safe" districts that are purposely drawn to protect a candidate or political party. California also saw more tossups across their districts than the national average.<span style="vertical-align: super; font-size: 20pt"><a href="https://www.nytimes.com/2015/07/02/upshot/independently-drawn-districts-have-proved-to-be-more-competitive.html">4</a></span></p>
@@ -389,15 +397,16 @@
                 <p class=step><span style="color: #8888ab; font-weight: 700;">IRCs also promote greater transparency and voter participation into the redistricting process</span>. Many IRCs post each proposed plan on social media and their websites; some go even further and reach out to the voters for their input.</p>
             </div>
             <div class="background-text">
-                <p class=step>As more states understand the benefit of IRCs and separating the redistricting process from state legislatures, there is a steady trend of more IRCs, as well as politician, advisory, and backup commissions, across the nation.<span style="vertical-align: super; font-size: 20pt"><a href="https://redistricting.lls.edu/redistricting-101/who-draws-the-lines/">5</a></span> With this approaching rise in the sample size of IRCs, there can soon be more definitive and quantitative research on IRCs.</p>
+                <p class=step>As more states learn the benefit of greater transparency and objectivity in the redistricting process, we see a large variation of redistricting organizations implemented nationwide. This website seeks to evaluate only the efficacy of Independent Redistricting Commissions, but a handful of states have also implemented <span style="color: #8888ab; font-weight: 700;">politician, advisory, and backup commissions</span> that create differing degrees of separation from partisan state legislatures. While they are yet to be quantitatively examined, we can be sure that <span style="color:#d3a029; font-weight: 700;">the inclusion of redistricting commissions in our democratic process builds upon our nation's ideals of free and fair elections</span>.</p>
             </div>
             <br>
-            <hr>
+            <div id="yellow-barrier"></div>
             <br>
             <br>
-            <div class="background-text" style="opacity:1 !important;"><span style="font-weight: 500; color:#D39F29;">Citation</span>
+            <div class="background-text" style="opacity:1 !important;">
+                <span style="font-weight: 500; color:#D39F29;">Citation</span>
                 <br>
-                <span style="font-size: 25px; line-height: 1;">McCartan, et al. (2022, Feb. 8). ALARM Project: 50-State Redistricting Simulations. Retrieved from https://doi.org/10.7910/DVN/SLCD3E</span>
+                <span style="line-height: 1;">McCartan, et al. (2022, Feb. 8). ALARM Project: 50-State Redistricting Simulations. Retrieved from https://doi.org/10.7910/DVN/SLCD3E</span>
             </div>
             <div class="finale">
                 <p>Github code can be downloaded <a href="https://github.com/dheetideliwala/honors-thesis">here</a>.</p>

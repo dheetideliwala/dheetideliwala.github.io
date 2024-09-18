@@ -114,7 +114,7 @@ var d2_scroller = scrollama();
 // generic window resize listener event
 function d2_handleResize() {
     // 1. update height of step elements
-    var stepH = Math.floor(window.innerHeight * 0.5);
+    var stepH = Math.floor(window.innerHeight * 0.47);
     d2_districting_text.style("height", stepH + "px");
 
     // var algoHeight = window.innerHeight / 2;
@@ -141,7 +141,7 @@ function d2_handleStepEnter(response) {
         // console.log("step", i)
         if(i == response.index) {
             j = response.index
-            // console.log("entering", j)
+            console.log("entering", j)
         }
         return i === response.index;
         // we can save the value that returns true in this and only remove the class from that value in exit
@@ -150,23 +150,23 @@ function d2_handleStepEnter(response) {
     let image = document.getElementById('algorithm');
     let images = ['images/AZ_Shortest.png', 'images/AZ_Olson.png', 'images/AL_Voronoi.png']
     image.src = images[response.index];
-    algo.classed("is-active", true)
+    algo.classed("is-active", true);
 
     // update graphic based on step
     // figure.select("p").text(response.index + 1);
 }
 
 function d2_handleStepExit(response) {
-    // console.log("exited ", response.index)
+    console.log("exited ", response.index)
     if(response.index == j) {
         d2_districting_text.classed("is-active", false)
     }
-    algo.classed("is-active", false)
-    // d2_districting_text.classed("is-active", function(d, i) {
-    //     if(i == response.index) {
-    //         return false;
-    //     }
-    // })
+    algo.classed("is-active", function(d, i){
+        if(response.index == 2 || response.index == 0)
+            return false;
+        else
+            return true;
+    })
 }
 
 function d2_init() {

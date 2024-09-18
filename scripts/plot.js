@@ -202,7 +202,6 @@ function drawScatterPlot() {
     g.append('text')
         .attr('x',innerWidth/2)
         .attr('y',innerHeight+75)
-        .style('font-size', '22pt')
         .attr('text-anchor','middle')
         .text(xTitle);
     g.append('text')
@@ -248,7 +247,7 @@ var ChangetoolTip;
 
 function drawPlot() {
 
-    // Title of X and Y axis
+    // Title of X axis
     const xMetric = d3.select('#metric').property('value');
 
     // X, Y, color, and stroke scales
@@ -258,7 +257,7 @@ function drawPlot() {
 
     const yScale = d3.scalePoint()
                     .domain(["", "CO", "MI", "NY", "."]) // data space
-                    .range([innerHeight, 0]); // pixel space
+                    .range([changeInnerHeight, 0]); // pixel space
 
     const colorScale = d3.scaleOrdinal()
         .domain(["IRC", "non-IRC"])
@@ -294,15 +293,7 @@ function drawPlot() {
     if(xMetric == "Expected Democratic Seats") {
         // console.log("dem")
         ChangexAttrib = "DemSeats"
-        ChangexValue = "d."+xAttrib
-        g.append("line")
-            .attr("x1", xScale(14.7))
-            .attr("x2", xScale(77.96))
-            .attr("y1", yScale("NY"))
-            .attr("y2", yScale("NY"))
-            .attr("stroke", "black")
-            .attr('stroke-width', '2')
-
+        ChangexValue = "d."+ChangexAttrib
         g.append("line")
             .attr("x1", xScale(78.96))
             .attr("x2", xScale(81.7))
@@ -318,105 +309,112 @@ function drawPlot() {
             .attr("y2", yScale("MI"))
             .attr("stroke", "black")
             .attr('stroke-width', '2')
+
+        g.append("line")
+            .attr("x1", xScale(14.7))
+            .attr("x2", xScale(77.96))
+            .attr("y1", yScale("NY"))
+            .attr("y2", yScale("NY"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
     }
     else if(xMetric == "Efficiency Gap") {
         // console.log("egap")
 
         ChangexAttrib = "Egap";
-        ChangexValue = "d."+xAttrib
+        ChangexValue = "d."+ChangexAttrib
 
         g.append("line")
-        .attr("x1", xScale(23.8))
-        .attr("x2", xScale(30.96))
-        .attr("y1", yScale("CO"))
-        .attr("y2", yScale("CO"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+            .attr("x1", xScale(23.8))
+            .attr("x2", xScale(30.96))
+            .attr("y1", yScale("CO"))
+            .attr("y2", yScale("CO"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
 
-    g.append("line")
-        .attr("x1", xScale(30.32))
-        .attr("x2", xScale(87.52))
-        .attr("y1", yScale("NY"))
-        .attr("y2", yScale("NY"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+        g.append("line")
+            .attr("x1", xScale(3.3))
+            .attr("x2", xScale(94.38))
+            .attr("y1", yScale("MI"))
+            .attr("y2", yScale("MI"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
 
-    g.append("line")
-        .attr("x1", xScale(3.3))
-        .attr("x2", xScale(94.38))
-        .attr("y1", yScale("MI"))
-        .attr("y2", yScale("MI"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+        g.append("line")
+            .attr("x1", xScale(30.32))
+            .attr("x2", xScale(87.52))
+            .attr("y1", yScale("NY"))
+            .attr("y2", yScale("NY"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
     }
     else if(xMetric == "Partisan Symmetry") {
 
         ChangexAttrib = "PSym";
-        console.log(ChangexAttrib)
 
-        ChangexValue = "d."+xAttrib
-
-        g.append("line")
-        .attr("x1", xScale(12.56))
-        .attr("x2", xScale(72.46))
-        .attr("y1", yScale("CO"))
-        .attr("y2", yScale("CO"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+        ChangexValue = "d."+ChangexAttrib
 
         g.append("line")
-        .attr("x1", xScale(45.56))
-        .attr("x2", xScale(62.7))
-        .attr("y1", yScale("NY"))
-        .attr("y2", yScale("NY"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+            .attr("x1", xScale(12.56))
+            .attr("x2", xScale(72.46))
+            .attr("y1", yScale("CO"))
+            .attr("y2", yScale("CO"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
 
         g.append("line")
-        .attr("x1", xScale(32.24))
-        .attr("x2", xScale(80.54))
-        .attr("y1", yScale("MI"))
-        .attr("y2", yScale("MI"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+            .attr("x1", xScale(32.24))
+            .attr("x2", xScale(80.54))
+            .attr("y1", yScale("MI"))
+            .attr("y2", yScale("MI"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
+
+        g.append("line")
+            .attr("x1", xScale(45.56))
+            .attr("x2", xScale(62.7))
+            .attr("y1", yScale("NY"))
+            .attr("y2", yScale("NY"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
     }
     else if(xMetric == "Polsby Popper") {
         // console.log("pp")
 
         ChangexAttrib = "Polsby"
-        ChangexValue = "d."+xAttrib
+        ChangexValue = "d."+ChangexAttrib
 
         g.append("line")
-        .attr("x1", xScale(22.02))
-        .attr("x2", xScale(8.96))
-        .attr("y1", yScale("CO"))
-        .attr("y2", yScale("CO"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+            .attr("x1", xScale(22.02))
+            .attr("x2", xScale(8.96))
+            .attr("y1", yScale("CO"))
+            .attr("y2", yScale("CO"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
 
         g.append("line")
-        .attr("x1", xScale(98.08))
-        .attr("x2", xScale(2.64))
-        .attr("y1", yScale("MI"))
-        .attr("y2", yScale("MI"))
-        .attr("stroke", "black")
-        .attr('stroke-width', '2')
+            .attr("x1", xScale(98.08))
+            .attr("x2", xScale(2.64))
+            .attr("y1", yScale("MI"))
+            .attr("y2", yScale("MI"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
 
-        // g.append("line")
-        // .attr("x1", xScale(32.24))
-        // .attr("x2", xScale(80.54))
-        // .attr("y1", yScale("MI"))
-        // .attr("y2", yScale("MI"))
-        // .attr("stroke", "black")
-        // .attr('stroke-width', '2')
+        g.append("line")
+            .attr("x1", xScale(100))
+            .attr("x2", xScale(100))
+            .attr("y1", yScale("NY"))
+            .attr("y2", yScale("NY"))
+            .attr("stroke", "black")
+            .attr('stroke-width', '2')
     }
     else {
         ChangexAttrib = "County"
-        ChangexValue = "d."+xAttrib
+        ChangexValue = "d."+ChangexAttrib
 
         g.append("line")
-        .attr("x1", xScale(99.66))
-        .attr("x2", xScale(80))
+        .attr("x1", xScale(80))
+        .attr("x2", xScale(99.66))
         .attr("y1", yScale("CO"))
         .attr("y2", yScale("CO"))
         .attr("stroke", "black")
@@ -480,7 +478,7 @@ function drawPlot() {
         ChangetoolTip
             .style('visibility', 'visible')
         d3.select(this)
-            // .style("opacity", 1)
+            .style("opacity", 1)
             .style("stroke", "#000000")
             .style("stroke-width", "2")
     })
