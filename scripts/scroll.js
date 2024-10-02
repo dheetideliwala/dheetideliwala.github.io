@@ -122,8 +122,8 @@ var d2_scroller = scrollama();
 function d2_handleResize() {
     // 1. update height of step elements
     // console.log(window.innerHeight, window.outerHeight)
-    var stepH = Math.floor(window.outerHeight * 0.375);
-    d2_districting_text.style("height", stepH + "px");
+    var stepH = Math.floor(window.outerHeight * 0.43);
+    // d2_districting_text.style("height", stepH + "px");
 
     var algoHeight = stepH;
     var algoMarginTop = (window.innerHeight - algoHeight) / 2;
