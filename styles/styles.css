@@ -116,7 +116,7 @@ article.background {
     font-weight:100;
     text-align: left;
 
-    padding: 20px 10px;
+    padding: 30px 10px;
 }
 .background-text.is-active {
     color: black;
@@ -139,7 +139,6 @@ article.background {
 #districting-1 {
     position: relative;
     display: flex;
-    margin-bottom: 40px;
 }
 article.districting {
     position: relative;
@@ -154,12 +153,17 @@ article.districting {
 
     position: relative;
     flex: 2;
+
+    /* opacity: .3; */
+    opacity: 1;
 }
 #maricopa {
     position: relative;
     
     width: 97%;
     height: 97%;
+
+    /* opacity: .3; */
 }
 .precinct {
     stroke: black;
@@ -181,9 +185,6 @@ article.districting {
     border-left: 10px solid;
     border-left-color: white;
     
-}
-.districting-text:last-child {
-    margin-bottom: 0;
 }
 .districting-text.is-active {
     opacity: 1;
@@ -210,11 +211,15 @@ p.subtitle {
 #districting-2>* {
     flex: 1;
 
-    margin-bottom: 40px;
 }
 .figure {
     border: 1px solid #28386C;
     border-style:groove; 
+    opacity: 1;
+}
+.figure.is-active {
+    opacity: 1;
+    transition: .5s;
 }
 #algorithm {
     position: sticky;
@@ -224,10 +229,11 @@ p.subtitle {
     z-index: 0;
     object-fit: contain;
 
-    opacity: .3;
+    opacity: 1;
 }
 #algorithm.is-active{
     opacity: 1 !important;
+    transition:.5s;
 }
 
 #districting-3 {

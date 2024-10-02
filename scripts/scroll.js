@@ -64,20 +64,25 @@ background_init();
 
 
 // DISTRICTING-1 FADE IN FADE OUT
-var d1_scrolly = document.querySelector("#districting-1");
-var d1_districting = d1_scrolly.querySelector("article");
-var d1_districting_step = d1_districting.querySelectorAll(".districting-text");
+var body = d3.select("body")
+var d1_scrolly = body.select("#districting-1");
+var maricopa = d1_scrolly.select('.maricopa-svg');
+var d1_districting = d1_scrolly.select("article");
+var d1_districting_step = d1_districting.selectAll(".districting-text");
 
 var d1_scroller = scrollama();
 
 // scrollama event handlers
 function d1_handleStepEnter(response) {
     // response = { element, direction, index }
+    
     response.element.classList.add("is-active");
+    // maricopa.classed('is-active', true);
 }
 
 function d1_handleStepExit(response) {
     response.element.classList.remove("is-active");
+    // maricopa.classed('is-active', false);
 }
 
 function d1_init() {
@@ -106,7 +111,9 @@ var d2_scrolly = body.select("#districting-2");
 var algo = d2_scrolly.select("#algorithm");
 var d2_districting = d2_scrolly.select("article");
 var d2_districting_text = d2_districting.selectAll(".districting-text");
-var d2_image = d2_districting.selectAll("figure")
+var figure = d2_scrolly.select(".figure")
+var image = document.getElementById('algorithm');
+image.src = "";
 
 // initialize the scrollama
 var d2_scroller = scrollama();
@@ -114,10 +121,10 @@ var d2_scroller = scrollama();
 // generic window resize listener event
 function d2_handleResize() {
     // 1. update height of step elements
-    var stepH = Math.floor(window.innerHeight * 0.47);
+    // console.log(window.innerHeight, window.outerHeight)
+    var stepH = Math.floor(window.outerHeight * 0.375);
     d2_districting_text.style("height", stepH + "px");
 
-    // var algoHeight = window.innerHeight / 2;
     var algoHeight = stepH;
     var algoMarginTop = (window.innerHeight - algoHeight) / 2;
 
@@ -141,32 +148,49 @@ function d2_handleStepEnter(response) {
         // console.log("step", i)
         if(i == response.index) {
             j = response.index
-            console.log("entering", j)
         }
         return i === response.index;
         // we can save the value that returns true in this and only remove the class from that value in exit
     });
 
-    let image = document.getElementById('algorithm');
     let images = ['images/AZ_Shortest.png', 'images/AZ_Olson.png', 'images/AL_Voronoi.png']
     image.src = images[response.index];
-    algo.classed("is-active", true);
+    // algo.classed("is-active", true);
+    // figure.classed("is-active", true);
+    console.log("entering", j, "image", image.src)
 
     // update graphic based on step
     // figure.select("p").text(response.index + 1);
 }
 
 function d2_handleStepExit(response) {
-    console.log("exited ", response.index)
+    let image = document.getElementById('algorithm');
+
+
     if(response.index == j) {
         d2_districting_text.classed("is-active", false)
     }
-    algo.classed("is-active", function(d, i){
-        if(response.index == 2 || response.index == 0)
-            return false;
-        else
-            return true;
-    })
+    // algo.classed("is-active", function(d, i){
+    //     console.log(image.src == 'images/AZ_Olson.png')
+    //     if((response.index == 2 || response.index == 0) && image.src == 'images/AZ_Olson.png') {
+    //         console.log("middle", image.src)
+    //         return true;
+    //     }
+    //     else if(response.index == 2 || response.index == 0) {
+    //         console.log("leaving", image.src)
+    //         return false;
+    //     }
+    //     else {
+    //         console.log("leaving olson")
+    //         return true;
+    //     }
+    // })
+    // figure.classed("is-active", function(d, i){
+    //     if(response.index == 2 || response.index == 0)
+    //         return false;
+    //     else
+    //         return true;
+    // })
 }
 
 function d2_init() {
